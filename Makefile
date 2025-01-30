@@ -22,7 +22,8 @@ endif
 SOURCES			=	main.c \
 					is_int.c \
 					exit_utils.c \
-					parsing.c 
+					parsing.c \
+					doubles_check.c
 				
 SOURCE_NAME		=	$(basename $(SOURCES))
 OBJECTS			=	$(addsuffix .o, $(addprefix $(DIR_BIN)/, $(SOURCE_NAME)))

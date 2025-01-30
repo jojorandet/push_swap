@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/30 11:51:53 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/01/30 12:43:38 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ static void	parse_single_string(int argc, char **argv, t_stack *stack)
 		push_swap_exit(stack, "split failed, array_string NULL!\n");
 	}
 	check_if_int(argc, array_string, stack);
-	while (array_string[stack->len]) // i do this because i do not have a null terminatir and need to go to the end 
-		stack->len++;
+	while (array_string[stack->len] != NULL) // i do this because i do not have a null terminatir and need to go to the end 
+		stack->len++; // first 0, then 1 , 2, 3 , and the 4th is NULL stop (case of 3 4 5 6 NULL)
 	init_values(stack);
 	fill_array(array_string, stack);
 	free (array_string);
@@ -63,6 +63,8 @@ static void	parse_single_string(int argc, char **argv, t_stack *stack)
 
 void	parse_arguments(int argc, char **argv, t_stack *stack)
 {
+	
+	ft_bzero(stack, sizeof(t_stack));
 	if (argc < 2)
 		push_swap_exit(stack, "arguments incomplete!\n");
 	if (argc == 2)

@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   doubles_check.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/19 17:07:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/30 14:18:00 by jrandet          ###   ########.fr       */
+/*   Created: 2025/01/30 12:49:18 by jrandet           #+#    #+#             */
+/*   Updated: 2025/01/30 14:22:01 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	check_doubles(t_stack *stack)
 {
-	t_stack	stack;
-	int		i;
+	int	i;
+	int	j;
 
 	i = 0;
-	parse_arguments(argc, argv, &stack); // done using argc argv, now i can move on
-	while (i < stack.len)
+	while (stack && stack->values && (i < stack->len))
 	{
-		printf("%d\n", stack.values[i]);
+		j = i + 1;
+		while (j < stack->len)
+		{
+			if (stack->values[i] == stack->values[j])
+			{
+				push_swap_exit(stack, "double found!\n");
+				return ;
+			}
+			j++;
+		}
 		i++;
 	}
-	check_doubles(&stack);
-	return (0);
+	return ;
 }
