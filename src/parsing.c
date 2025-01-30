@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/27 20:20:59 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/01/30 11:51:53 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	init_values(t_stack *stack)
 {
 	if (!stack)
 		return ;
-	stack->values = (int *)ft_calloc(stack->len, sizeof(int));
+	stack->values = (int *)ft_calloc(stack->len, sizeof(int)); //ft caloc does theft bzero inside just for the vakues array
 	if (!stack->values)
 		push_swap_exit(stack, "stack->values is NULL\n");
 }
@@ -45,7 +45,7 @@ static void	parse_single_string(int argc, char **argv, t_stack *stack)
 {
 	char	**array_string;
 
-	array_string = ft_split(argv[1], ' ');
+	array_string = ft_split(argv[1], ' '); // mnalloc is done in the spli
 	if (!array_string)
 	{
 		free(array_string);
@@ -53,7 +53,7 @@ static void	parse_single_string(int argc, char **argv, t_stack *stack)
 		push_swap_exit(stack, "split failed, array_string NULL!\n");
 	}
 	check_if_int(argc, array_string, stack);
-	while (array_string[stack->len])
+	while (array_string[stack->len]) // i do this because i do not have a null terminatir and need to go to the end 
 		stack->len++;
 	init_values(stack);
 	fill_array(array_string, stack);
@@ -70,3 +70,5 @@ void	parse_arguments(int argc, char **argv, t_stack *stack)
 	else 
 		parse_multiple_arg(argc, argv, stack);
 }
+
+

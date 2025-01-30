@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/27 19:39:45 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/01/30 11:33:38 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef	struct s_stack
 {
-	int *values;
-	int	*cursor;
+	int *values; //tabkeau d'int
+	int	*cursor; //the pointer that allows me to be n between stacks
 	int	len;
 }		t_stack;
 

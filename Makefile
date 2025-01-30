@@ -11,10 +11,10 @@ FT_LIBFT	= 	./include/libft
 
 #-----------------COMP FLAGS------------------------#
 
-CC		=	gcc
+UNAME := $(shell uname)
 CFLAGS	=	-Wall -Werror -Wextra -g
 ifeq ($(UNAME), Darwin)
-	CFLAGS += -g -fsanitize=address
+	CFLAGS += -fsanitize=address
 endif
 
 #---------------------SOURCE------------------------#
