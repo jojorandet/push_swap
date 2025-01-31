@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/30 14:17:12 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/01/31 12:05:43 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef	struct s_stack
 {
 	int *values; //tabkeau d'int
 	int	*cursor; //the pointer that allows me to be n between stacks
+	int	*end;
 	int	len;
 }		t_stack;
 
@@ -30,6 +31,14 @@ void	check_if_int(int argc, char **argv, t_stack *stack);
 
 void	parse_arguments(int argc, char **argv, t_stack *stack);
 void	check_doubles(t_stack *stack);
+//swap moves
+void	swap_a(t_stack *stack);
+void	swap_b(t_stack *stack);
+void	swap_ss(t_stack *stack);
+//push moves
+void	push_a(t_stack *stack);
+void	push_b(t_stack *stack);
+
 
 void	push_swap_exit(t_stack *stack, char *error);
 

@@ -20,10 +20,10 @@ endif
 #---------------------SOURCE------------------------#
 #I looks for the header files, and then L looks for the .a and l links them together 
 SOURCES			=	main.c \
-					is_int.c \
+					int_tester.c \
 					exit_utils.c \
 					parsing.c \
-					doubles_check.c
+					push_swap_moves.c
 				
 SOURCE_NAME		=	$(basename $(SOURCES))
 OBJECTS			=	$(addsuffix .o, $(addprefix $(DIR_BIN)/, $(SOURCE_NAME)))
