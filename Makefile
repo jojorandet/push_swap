@@ -23,7 +23,10 @@ SOURCES			=	main.c \
 					int_tester.c \
 					exit_utils.c \
 					parsing.c \
-					push_swap_moves.c
+					push_swap_moves.c \
+					rot_and_rev_moves.c \
+					combined_moves.c
+
 				
 SOURCE_NAME		=	$(basename $(SOURCES))
 OBJECTS			=	$(addsuffix .o, $(addprefix $(DIR_BIN)/, $(SOURCE_NAME)))
