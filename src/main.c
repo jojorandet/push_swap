@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 17:07:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/01 16:10:19 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 19:51:57 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	main(int argc, char **argv)
 
 	parse_arguments(argc, argv, &stack);
 	print_array(&stack);
-	replace_index(&stack);
-	print_array(&stack);
+	index_convert(&stack);
 	return (0);
 }

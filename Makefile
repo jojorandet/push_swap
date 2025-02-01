@@ -26,7 +26,7 @@ SOURCES			=	main.c \
 					push_swap_moves.c \
 					rot_and_rev_moves.c \
 					combined_moves.c \
-					index_convert.c
+					index_convert.c 
 
 				
 SOURCE_NAME		=	$(basename $(SOURCES))

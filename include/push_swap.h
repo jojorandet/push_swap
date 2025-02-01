@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/01 16:13:41 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 16:17:56 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,14 @@ typedef struct s_stack
 	int	len;
 }		t_stack;
 
+//parsing of the arguments
 int		is_int(char *s);
 void	check_if_int(int argc, char **argv, t_stack *stack);
-
 void	parse_arguments(int argc, char **argv, t_stack *stack);
 void	check_doubles(t_stack *stack);
+
+//conversion to index 
+void	index_convert(t_stack *stack);
 
 //swap moves
 void	swap_a(t_stack *stack);
@@ -51,6 +54,7 @@ void	rot_rr(t_stack *stack);
 void	rev_rot_a(t_stack *stack);
 void	rev_rot_b(t_stack *stack);
 void	rev_rot_rr(t_stack *stack);
+
 
 void	push_swap_exit(t_stack *stack, char *error);
 
