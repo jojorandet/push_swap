@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 18:17:30 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/31 11:31:41 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 15:07:46 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	push_swap_exit(t_stack *stack, char *error)
 {
 	if (stack)
 	{
-		if (stack->values && stack->cursor)
+		if (stack->values && stack->top)
 		{
-			free(stack->cursor);
-			stack->cursor = NULL;
+			free(stack->top);
+			stack->top = NULL;
 		}
 		free(stack->values);
 		stack->values = NULL;

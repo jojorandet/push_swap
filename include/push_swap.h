@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/31 17:13:54 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 15:15:04 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef	struct s_stack
 {
 	int *values; //tabkeau d'int
-	int	*cursor; //the pointer that allows me to be n between stacks
+	int	*top; //the pointer that allows me to be n between stacks
 	int	*end;
 	int	len;
 }		t_stack;
@@ -50,7 +50,7 @@ void	rot_rr(t_stack *stack);
 //reverse rotation moves
 void	rev_rot_a(t_stack *stack);
 void	rev_rot_b(t_stack *stack);
-//void	rev_rot_rr(t_stack *stack);
+void	rev_rot_rr(t_stack *stack);
 
 void	push_swap_exit(t_stack *stack, char *error);
 

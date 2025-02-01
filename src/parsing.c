@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/31 11:49:18 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 15:07:46 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	fill_array(char **array_string, t_stack *stack)
 	while (value <= stack->end)
 		*(value++) = ft_atoi(*(array_string++));
 	check_doubles(stack);
-	stack->cursor = (stack->values);
+	stack->top = (stack->values);
 }
 
 static void	init_values(t_stack *stack)

@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 14:51:20 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/31 18:54:14 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 15:16:00 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,59 @@
 void	rot_a(t_stack *stack)
 {
 	int	temp;
-	int	*cursor_temp;
+	int	*cursor;
 
-	cursor_temp = stack->cursor;
-	temp = *(cursor_temp);
-	while (cursor_temp < (stack->end))
+	cursor = stack->top;
+	temp = *(cursor);
+	while (cursor < (stack->end))
 	{
-		*(cursor_temp) = *(cursor_temp + 1);
-		cursor_temp++;
+		*(cursor) = *(cursor + 1);
+		cursor++;
 	}
-	*(cursor_temp) = temp;
+	*(cursor) = temp;
 }
 
 void	rot_b(t_stack *stack)
 {
 	int temp;
-	int	*cursor_temp;
+	int	*cursor;
 
-	cursor_temp = (stack->cursor - 1);
-	temp = *cursor_temp;
-	while (cursor_temp > stack->values)
+	cursor = (stack->top - 1);
+	temp = *cursor;
+	while (cursor > stack->values)
 	{
-		*cursor_temp = *(cursor_temp - 1);
-		cursor_temp--;
+		*cursor = *(cursor - 1);
+		cursor--;
 	}
-	*cursor_temp = temp;
+	*cursor = temp;
 }
 
 void	rev_rot_a(t_stack *stack)
 {
 	int	temp;
-	int	*cursor_temp;
+	int	*cursor;
 
 	temp = *(stack->end);
-	cursor_temp = (stack->end);
-	while (cursor_temp > stack->cursor)
+	cursor = (stack->end);
+	while (cursor > stack->top)
 	{
-		*(cursor_temp) = *(cursor_temp - 1);
-		cursor_temp--;
+		*(cursor) = *(cursor - 1);
+		cursor--;
 	}
-	*cursor_temp = temp;
+	*cursor = temp;
+}
+
+void	rev_rot_b(t_stack *stack)
+{
+	int	temp;
+	int	*cursor;
+
+	temp = *(stack->values);
+	cursor = (stack->values);
+	while (cursor < (stack->top - 1))
+	{
+		*cursor = *(cursor + 1);
+		cursor++;
+	}
+	*cursor = temp;
 }
