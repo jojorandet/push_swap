@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/01 15:15:04 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 16:13:41 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 # include <stdio.h>
 # include "libft.h"
 
-typedef	struct s_stack
+typedef struct s_stack
 {
-	int *values; //tabkeau d'int
+	int	*values; //tabkeau d'int
 	int	*top; //the pointer that allows me to be n between stacks
 	int	*end;
 	int	len;

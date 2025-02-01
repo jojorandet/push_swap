@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 14:51:20 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/01 15:16:00 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 16:13:00 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	rot_a(t_stack *stack)
 
 void	rot_b(t_stack *stack)
 {
-	int temp;
+	int	temp;
 	int	*cursor;
 
 	cursor = (stack->top - 1);

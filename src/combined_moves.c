@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 14:52:22 by jrandet           #+#    #+#             */
-/*   Updated: 2025/01/31 18:55:00 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 16:11:32 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	rot_rr(t_stack *stack)
 void	rev_rot_rr(t_stack *stack)
 {
 	rev_rot_a(stack);
-	//rev_rot_b(stack);
+	rev_rot_b(stack);
 }
