@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 16:15:28 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/01 20:50:15 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/01 21:51:07 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,6 @@ void	index_convert(t_stack *stack)
 	{
 		count_smaller = get_smaller_count(stack, values, values[i]);
 		stack->values[i] = count_smaller;
-		i++;
-	}
-	i = 0;
-	while (i < stack->len)
-	{
-		printf(" %d \n", stack->values[i]);
 		i++;
 	}
 	free(values);

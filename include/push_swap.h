@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/01 16:17:56 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/02 17:42:24 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,14 @@ void	check_doubles(t_stack *stack);
 //conversion to index 
 void	index_convert(t_stack *stack);
 
+//sorting functions
+void	sorting(t_stack *stack);
+void	sort_two_elements(t_stack *stack);
+void	sort_three_elements(t_stack *stack);
+//void	sort_five_elements(t_stack *stack);
+
 //swap moves
+void	swap_function(int *a, int *b);
 void	swap_a(t_stack *stack);
 void	swap_b(t_stack *stack);
 
