@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 17:07:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/03 18:12:29 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/03 18:39:43 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ int	main(int argc, char **argv)
 	sorting(&stack, &string);
 	printf("sorted array:\n");
 	print_array(&stack);
+	printf("%s", string.values);
+	rot_a(&stack, &string);
+	rot_a(&stack, &string);
+	printf("after adding the two ra operations\n");
 	printf("%s", string.values);
 	return (0);
 }

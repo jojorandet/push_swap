@@ -6,13 +6,13 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 12:01:38 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/03 17:15:29 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/03 18:20:37 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRING_H
 # define STRING_H
-# define STRING_INITIAL_LEN 64
+# define STRING_INITIAL_LEN 4
 # include "libft.h"
 # include <unistd.h>
 
