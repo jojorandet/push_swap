@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 12:01:38 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/03 17:02:37 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/03 17:15:29 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ typedef struct s_string
 	int		is_enough_space;
 }				t_string;
 
-
+void	append_result_string(t_string *string, char c);
 
 #endif

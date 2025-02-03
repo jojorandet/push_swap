@@ -27,7 +27,8 @@ SOURCES			=	main.c \
 					rot_and_rev_moves.c \
 					combined_moves.c \
 					index_convert.c \
-					basic_sorting.c
+					basic_sorting.c \
+					utils/string_utils.c
 
 				
 SOURCE_NAME		=	$(basename $(SOURCES))
@@ -51,11 +52,13 @@ $(NAME): $(OBJECTS)
 #$@ expands to the target which is name. the compilation a.out goes into the push_swap
 
 $(DIR_BIN)/%.o: $(DIR_SRC)/%.c | $(DIR_BIN)
+	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) $(INCLUDE_FLAGS) -c $< -o $@
 #$< expands to src/main.c for example and then -o $@ is the target, meaning the ./bin/main.o
 
 $(DIR_BIN):
 	@mkdir -p $@
+	
 
 #-----------------------clean functions------------------------#
 

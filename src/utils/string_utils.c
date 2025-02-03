@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:34:47 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/03 17:10:02 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/03 18:09:57 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ static int is_enough_space(t_string *string)
 		string->total_len *= 2;
 		return (0);
 	}
+	return (0);
 }
 
 void	append_result_string(t_string *string, char c)

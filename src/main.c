@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 17:07:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/02 12:03:14 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/03 18:12:29 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ static void	print_array(t_stack *stack)
 
 int	main(int argc, char **argv)
 {
-	t_stack	stack;
+	t_stack		stack;
+	t_string	string;
 
 	parse_arguments(argc, argv, &stack);
 	printf("original array:\n");
@@ -37,8 +38,9 @@ int	main(int argc, char **argv)
 	index_convert(&stack);
 	printf("indexed array:\n");
 	print_array(&stack);
-	sorting(&stack);
+	sorting(&stack, &string);
 	printf("sorted array:\n");
 	print_array(&stack);
+	printf("%s", string.values);
 	return (0);
 }
