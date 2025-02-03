@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/02 17:42:24 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/03 12:04:09 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 	int	*top; //the pointer that allows me to be n between stacks
 	int	*end;
 	int	len;
-}		t_stack;
+}				t_stack;
 
 //parsing of the arguments
 int		is_int(char *s);
