@@ -21,7 +21,7 @@ endif
 #I looks for the header files, and then L looks for the .a and l links them together 
 SOURCES			=	main.c \
 					int_tester.c \
-					exit_utils.c \
+					utils/exit_utils.c \
 					parsing.c \
 					push_swap_moves.c \
 					rot_and_rev_moves.c \
