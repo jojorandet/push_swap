@@ -1,0 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   int_tester.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
+/*   Updated: 2025/02/05 11:30:36 by jrandet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/stack.h"
+
+void	check_doubles(t_stack *stack)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (stack && stack->values && (i < stack->len))
+	{
+		j = i + 1;
+		while (j < stack->len)
+		{
+			if (stack->values[i] == stack->values[j])
+			{
+				free_stack(stack);
+				return ;
+			}
+			j++;
+		}
+		i++;
+	}
+	return ;
+}
+
+void	check_if_int(int argc, char **argv, t_stack *stack)
+{
+	int	i;
+
+	i = 1;
+	while (argv[i] && i < argc)
+	{
+		if (!is_int(argv[i]))
+			free_stack(stack);
+		i++;
+	}
+}
+
+int	is_int(char *s)
+{
+	if (!s)
+		return (0);
+	if (*s == '-')
+		s++;
+	while (*s)
+	{
+		if (!(ft_isdigit(*s)))
+			return (0);
+		s++;
+	}
+	return (1);
+}
