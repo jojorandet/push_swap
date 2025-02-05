@@ -1,0 +1,5 @@
+*.a
+push_swap
+*.o
+.vscode/
+.DS_Store
