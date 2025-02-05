@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 10:54:32 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/05 13:17:14 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include "../../libft/libft.h"
 # include "string_utils.h"
-# include "../../stack/include/stack.h"
+# include "../../libft/libft.h"
+# include "stack.h"
 
+typedef struct s_stack t_stack;
 //conversion to index 
 void	index_convert(t_stack *stack);
-
-//sorting functions
-void	sorting(t_stack *stack, t_string *string);
-void	sort_two_elements(t_stack *stack, t_string *string);
-void	sort_three_elements(t_stack *stack, t_string *string);
 //void	sort_five_elements(t_stack *stack);
 
 //swap moves
@@ -50,9 +46,22 @@ void	rev_rot_a(t_stack *stack, t_string *string);
 void	rev_rot_b(t_stack *stack, t_string *string);
 void	rev_rot_rr(t_stack *stack, t_string *string);
 
+//sorting functions
+void	sorting(t_stack *stack, t_string *string);
+void	sort_two_elements(t_stack *stack, t_string *string);
+void	sort_three_elements(t_stack *stack, t_string *string);
+
+//big stack sorting
+void	sort(t_stack *stack, t_string *string);
+
+//srtring concat functions 
 void	init_string(t_string *string);
 void	free_string(t_string *string);
 
+//print the stack
+void	print_array(t_stack *stack);
+
+//exit function push swap (calls free stack)
 void	push_swap_exit(t_stack *stack, char *error);
 
 #endif

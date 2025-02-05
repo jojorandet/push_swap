@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:27:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 10:47:32 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/05 13:13:36 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 # define STACK_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include "../../libft/libft.h"
+# include "push_swap.h"
+
 
 typedef struct s_stack
 {

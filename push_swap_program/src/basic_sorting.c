@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 10:47:48 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/05 12:36:39 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ void	sorting(t_stack *stack, t_string *string)
 	if (stack->len == 3)
 		sort_three_elements(stack, string);
 	/*if (stack->len == 5)
-		sort_five_elements(stack);
+		sort_five_elements(stack);*/
 	else
-		sort(stack);*/
+		sort(stack, string);
 	return ;
 }

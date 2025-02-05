@@ -6,11 +6,12 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 11:30:36 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/05 13:14:59 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/stack.h"
+#include "stack.h"
+//#define ERROR_DOUBLE "Unauthorised usage: Double found!\n"
 
 void	check_doubles(t_stack *stack)
 {
@@ -24,10 +25,7 @@ void	check_doubles(t_stack *stack)
 		while (j < stack->len)
 		{
 			if (stack->values[i] == stack->values[j])
-			{
-				free_stack(stack);
-				return ;
-			}
+				push_swap_exit(stack, "double\n");
 			j++;
 		}
 		i++;

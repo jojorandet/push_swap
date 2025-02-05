@@ -31,7 +31,8 @@ PROGRAM_SRCS	=	main.c \
 					index_convert.c \
 					basic_sorting.c \
 					push_swap_exit.c \
-					string_utils.c
+					string_utils.c \
+					sort_stack.c
 
 STACK_OBJS		=	$(addprefix $(DIR_BIN)/stack/, $(STACK_SRCS:.c=.o))
 PROGRAM_OBJS	=	$(addprefix $(DIR_BIN)/program/, $(PROGRAM_SRCS:.c=.o))
