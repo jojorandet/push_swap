@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 17:07:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 13:19:14 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/07 16:31:20 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,5 @@ int	main(int argc, char **argv)
 	printf("indexed array:\n");
 	print_array(&stack);
 	sorting(&stack, &string);
-	printf("sorted array:\n");
-	print_array(&stack);
-	printf("%s", string.values);
 	return (0);
 }

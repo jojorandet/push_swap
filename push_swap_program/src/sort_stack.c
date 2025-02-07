@@ -6,51 +6,63 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:01:59 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/06 08:25:24 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/07 16:32:05 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	is_smallest_a(t_stack *stack)
+static int	check_exit(t_stack *stack, int	*cursor, int median)
 {
-	int	*cursor;
-	int	current_min;
-	int	count;
-	int	min_pos;
-
-	cursor = stack->top;
-	count = 0;
-	min_pos = 0;
-	current_min = *cursor;
-	while (cursor && (cursor != (stack->end + 1)))
+	while (cursor <= stack->end)
 	{
-		if (current_min > *cursor)
-		{
-			current_min = *cursor;
-			min_pos = count;
-		}
-		count++;
+		if (*cursor <= median)
+			return (1);
 		cursor++;
 	}
-	return (min_pos);
+	return (0);
 }
 
-void	sort(t_stack *stack, t_string *string)
+static void	sort_with_median(t_stack *stack, t_string *string, int median)
 {
-	int	rot_count;
-	
-	while (stack->top != (stack->end + 1))
+	int	*cursor;
+	int	still_smaller_to_check;
+
+	cursor = stack->values;
+	still_smaller_to_check = 1;
+	while (still_smaller_to_check)
 	{
-		print_array(stack);
-		rot_count = is_smallest_a(stack);
-		while (rot_count--)
+		if (*cursor <= median)
+		{
+			push_b(stack, string);
+			cursor++;
+		}
+		else
+		{
 			rot_a(stack, string);
-		push_b(stack, string);
+			still_smaller_to_check = check_exit(stack, cursor, median);
+		}
 	}
-	while (stack->top != stack->values)
-		push_a(stack, string);
+	printf("the array after sorting according to the median is:\n\n");
+	print_array(stack);
 }
+
+int	find_median(t_stack *stack)	
+{
+	if (stack->len % 2 == 0)
+		return ((stack->len / 2) - 1);
+	return (stack->len / 2);
+}
+
+void	prepare_sort(t_stack *stack, t_string *string)
+{
+	(void)string;
+	int	median;
+	
+	median = find_median(stack);
+	sort_with_median(stack, string, median);
+}
+
 
 //with the indesx sorting, i can easily find the median as well as the values above or below it :)
 //explore the use of indexes and play around with this idea,
@@ -61,3 +73,31 @@ void	sort(t_stack *stack, t_string *string)
 //once i have the median, then i can do all my operations
 //depending on where the median is, then it will change the procedure
 //calculate the cost of a ra move and the rra move and compare them one another. 
+
+
+/*
+static void	sort_with_median(t_stack *stack, t_string *string, int median)
+{
+	int	*cursor;
+	int n;
+
+	printf("median value is %d\n\n", median);
+	n = (stack->len + 1);
+	cursor = stack->values;
+	while(n)
+	{
+		if (*cursor <= median)
+		{
+			push_b(stack, string);
+			cursor = stack->top;
+		}
+		else if (*cursor > median)
+		{
+			rot_a(stack);
+			
+		}
+		n--;
+	}
+
+	print_array(stack);
+}*/

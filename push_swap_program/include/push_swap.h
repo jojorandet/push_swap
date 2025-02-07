@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 13:17:14 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/07 12:38:03 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ void	sort_two_elements(t_stack *stack, t_string *string);
 void	sort_three_elements(t_stack *stack, t_string *string);
 
 //big stack sorting
-void	sort(t_stack *stack, t_string *string);
+void	prepare_sort(t_stack *stack, t_string *string);
+
+//sorting functions
+int		find_median(t_stack *stack);
 
 //srtring concat functions 
 void	init_string(t_string *string);

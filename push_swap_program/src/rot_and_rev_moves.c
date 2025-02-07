@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 14:51:20 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 10:48:24 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/07 16:30:33 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	rot_a(t_stack *stack, t_string *string)
 {
 	int	temp;
-	int	*cursor;
+	int	*cursor_rot;
 
-	cursor = stack->top;
-	temp = *(cursor);
-	while (cursor < (stack->end))
+	cursor_rot = stack->top;
+	temp = *(cursor_rot);
+	while (cursor_rot < (stack->end))
 	{
-		*(cursor) = *(cursor + 1);
-		cursor++;
+		*(cursor_rot) = *(cursor_rot + 1);
+		cursor_rot++;
 	}
-	*(cursor) = temp;
+	*(stack->end) = temp;
 	append_result_string(string, 'r');
 	append_result_string(string, 'a');
 	append_result_string(string, '\n');
