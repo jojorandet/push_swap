@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:27:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 13:13:36 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/07 18:52:36 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_stack
 	int	*top; //the pointer that allows me to be n between stacks
 	int	*end;
 	int	len;
+	int	len_a;
+	int	len_b;
 }				t_stack;
 
 //free function for the stack

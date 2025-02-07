@@ -13,7 +13,7 @@ DIR_LIBFT	=	./libft
 
 UNAME := $(shell uname)
 CFLAGS	=	-Wall -Werror -Wextra -g
-ifeq ($(UNAME), Darwin)
+ifeq ($(DEBUG), 1)
 	CFLAGS += -fsanitize=address
 endif
 

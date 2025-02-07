@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:01:59 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/07 16:32:05 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/07 19:21:52 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static void	sort_with_median(t_stack *stack, t_string *string, int median)
 			still_smaller_to_check = check_exit(stack, cursor, median);
 		}
 	}
-	printf("the array after sorting according to the median is:\n\n");
-	print_array(stack);
+	// printf("the array after sorting according to the median is:\n\n");
+	// print_array(stack);
 }
 
 int	find_median(t_stack *stack)	

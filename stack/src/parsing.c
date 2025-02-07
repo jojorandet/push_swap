@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/07 13:22:00 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/07 18:57:12 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ static void	parse_multiple_arg(int argc, char **argv, t_stack *stack)
 {
 	check_if_int(argc, argv, stack);
 	stack->len = (argc - 1);
+	stack->len_a = stack->len;
+	stack->len_b = 0;
 	init_values(stack);
 	fill_array((argv + 1), stack);
 }
@@ -55,6 +57,8 @@ static void	parse_single_string(int argc, char **argv, t_stack *stack)
 	check_if_int(argc, array_string, stack);
 	while (array_string[stack->len] != NULL)
 		stack->len++;
+	stack->len_a = stack->len;
+	stack->len_b = 0;
 	init_values(stack);
 	fill_array(array_string, stack);
 	free (array_string);

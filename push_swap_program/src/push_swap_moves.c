@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:13:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/07 16:30:51 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/07 18:55:16 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	push_a(t_stack *stack, t_string *string)
 	if (stack->top == stack->values)
 		return ;
 	stack->top--;
+	stack->len_a++;
+	stack->len_b--;
 	append_result_string(string, 'p');
 	append_result_string(string, 'a');
 	append_result_string(string, '\n');
@@ -56,6 +58,8 @@ void	push_b(t_stack *stack, t_string *string)
 	if (stack->end == (stack->top - 1))
 		return ;
 	stack->top++;
+	stack->len_a--;
+	stack->len_b++;
 	append_result_string(string, 'p');
 	append_result_string(string, 'b');
 	append_result_string(string, '\n');
