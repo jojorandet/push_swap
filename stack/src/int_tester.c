@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 16:46:35 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 22:19:47 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,13 @@ void	check_if_int(int argc, char **argv, t_stack *stack)
 	int	i;
 
 	i = 1;
+	printf("input received: %s\n", argv[1]);
+	printf("First arg characters: \n");
+	for(int j = 0; argv[1][j]; j++)
+	{
+		printf("%c (%d) \n", argv[1][j], argv[1][j]);
+	}
+	printf("\n");
 	while (argv[i] && i < argc)
 	{
 		if (!is_int(argv[i]))
