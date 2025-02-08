@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/07 12:38:03 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 12:11:22 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
 # include "string_utils.h"
 # include "../../libft/libft.h"
 # include "stack.h"
@@ -55,7 +56,8 @@ void	sort_three_elements(t_stack *stack, t_string *string);
 void	prepare_sort(t_stack *stack, t_string *string);
 
 //sorting functions
-int		find_median(t_stack *stack);
+void	push_index_to_b(t_stack *stack, t_string *string, int index);
+int		find_element_position(t_stack *stack, int n);
 
 //srtring concat functions 
 void	init_string(t_string *string);

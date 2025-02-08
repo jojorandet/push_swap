@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/zsh
 make fclean
-if make
-then 
-	./push_swap $@
+if make  # Regular build without DEBUG=1
+then
+    ./push_swap "$@"  # Run without ASAN_OPTIONS
 else
-	echo "Error: Make failed - cannot execute pushswap"
-	exit 1
-fi 
+    echo "Make failed"
+    exit 1
+fi

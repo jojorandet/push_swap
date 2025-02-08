@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 13:14:59 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 11:36:33 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_doubles(t_stack *stack)
 		while (j < stack->len)
 		{
 			if (stack->values[i] == stack->values[j])
-				push_swap_exit(stack, "double\n");
+				push_swap_exit(stack, "Input Error: a double is found in input.\n");
 			j++;
 		}
 		i++;
@@ -41,7 +41,7 @@ void	check_if_int(int argc, char **argv, t_stack *stack)
 	while (argv[i] && i < argc)
 	{
 		if (!is_int(argv[i]))
-			free_stack(stack);
+			push_swap_exit(stack, "Input Error: argument is not int.\n");
 		i++;
 	}
 }

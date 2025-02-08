@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 18:17:30 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 13:18:37 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 11:25:28 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	push_swap_exit(t_stack *stack, char *error)
 {
-
 	free_stack(stack);
 	if (error)
 	{

@@ -6,13 +6,13 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/07 19:10:39 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 12:33:00 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	check_smaller_index(t_stack *stack, int n)
+int	find_element_position(t_stack *stack, int n)
 {
 	int	*cursor;
 	int	i;
@@ -29,7 +29,7 @@ void	push_index_to_b(t_stack *stack, t_string *string, int index)
 	int	i;
 	int	n;
 
-	i = check_smaller_index(stack, index);
+	i = find_element_position(stack, index);
 	if (i > (stack->len_a / 2))
 	{
 		n = stack->len_a - i;

@@ -12,10 +12,10 @@ DIR_LIBFT	=	./libft
 #-----------------COMP FLAGS------------------------#
 
 UNAME := $(shell uname)
-CFLAGS	=	-Wall -Werror -Wextra -g
-ifeq ($(DEBUG), 1)
-	CFLAGS += -fsanitize=address
-endif
+CFLAGS = -Wall -Werror -Wextra -g
+#ifeq ($(UNAME), Darwin)
+#CFLAGS += -fsanitize=address
+#endif
 
 #---------------------SOURCE------------------------#
 #I looks for the header files, and then L looks for the .a and l links them together 

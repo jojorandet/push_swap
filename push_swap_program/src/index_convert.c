@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 16:15:28 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/05 10:48:14 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 12:27:42 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ static int	*value_creation(t_stack *stack)
 
 	values = (int *)ft_calloc(stack->len, sizeof(int));
 	if (!values)
-	{
 		push_swap_exit(stack, "values is NULL in index convert");
-		return NULL;
-	}
 	ft_memcpy(values, stack->values, (stack->len * sizeof(int)));
 	return (values);
 }
