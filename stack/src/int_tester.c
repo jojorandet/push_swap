@@ -6,12 +6,32 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 11:36:33 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 16:46:35 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
-//#define ERROR_DOUBLE "Unauthorised usage: Double found!\n"
+
+void	check_int_max_min(t_stack *stack, char **array_of_strings)
+{
+	int	i;
+
+	i = 0;
+	while (array_of_strings[i])
+	{
+		if (array_of_strings[i][0] == '-')
+		{
+			if (ft_strlen(array_of_strings[i]) > 11)
+				push_swap_exit(stack, "Input error: input too long!\n");
+		}
+		else
+		{
+			if (ft_strlen(array_of_strings[i]) > 10)
+				push_swap_exit(stack, "Input error: input too long\n");
+		}
+		i++;
+	}
+}
 
 void	check_doubles(t_stack *stack)
 {

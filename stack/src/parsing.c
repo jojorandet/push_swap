@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 12:30:16 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 21:46:33 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,18 @@
 static void	fill_array(char **array_string, t_stack *stack)
 {
 	int	*value;
+	int	atoi_int;
 
 	value = stack->values;
 	while (value <= stack->end)
-		*(value++) = ft_atoi(*(array_string++));
+	{
+		atoi_int = ft_atoi(*(array_string));
+		if ((long)atoi_int > INT_MAX || (long)atoi_int < INT_MIN)
+			push_swap_exit(stack, "Input error: value too large!\n");
+		*value = atoi_int;
+		array_string++;
+		value++;
+	}
 	check_doubles(stack);
 	stack->top = (stack->values);
 }

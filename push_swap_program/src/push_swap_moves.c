@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:13:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 10:04:43 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 21:43:50 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,46 +21,38 @@ void	swap_function(int *a, int *b)
 	*b = temp;
 }
 
-void	swap_a(t_stack *stack, t_string *string)
+void	swap_a(t_stack *stack)
 {
-	if (stack->end - stack->top < 2)
+	if (stack->end - stack->top < 1)
 		return ;
 	swap_function(stack->top, (stack->top + 1));
-	append_result_string(string, 's');
-	append_result_string(string, 'a');
-	append_result_string(string, '\n');
+	printf("sa\n");
 }
 
-void	swap_b(t_stack *stack, t_string *string)
+void	swap_b(t_stack *stack)
 {
 	if (stack->top - stack->values < 2)
 		return ;
 	swap_function((stack->top - 1), (stack->top - 2));
-	append_result_string(string, 's');
-	append_result_string(string, 'b');
-	append_result_string(string, '\n');
+	printf("sb\n");
 }
 
-void	push_a(t_stack *stack, t_string *string)
+void	push_a(t_stack *stack)
 {
 	if (stack->top == stack->values)
 		return ;
 	stack->top--;
 	stack->len_a++;
 	stack->len_b--;
-	append_result_string(string, 'p');
-	append_result_string(string, 'a');
-	append_result_string(string, '\n');
+	printf("pa\n");
 }
 
-void	push_b(t_stack *stack, t_string *string)
+void	push_b(t_stack *stack)
 {
 	if (stack->end == (stack->top - 1))
 		return ;
 	stack->top++;
 	stack->len_a--;
 	stack->len_b++;
-	append_result_string(string, 'p');
-	append_result_string(string, 'b');
-	append_result_string(string, '\n');
+	printf("pb\n");
 }

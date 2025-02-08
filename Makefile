@@ -25,13 +25,12 @@ STACK_SRCS		= 	int_tester.c \
 					stack_utils.c
 
 PROGRAM_SRCS	=	main.c \
-					push_swap_moves.c \
-					rot_and_rev_moves.c \
+					basic_sorting.c \
 					combined_moves.c \
 					index_convert.c \
-					basic_sorting.c \
 					push_swap_exit.c \
-					string_utils.c \
+					push_swap_moves.c \
+					rot_and_rev_moves.c \
 					sort_stack.c
 
 STACK_OBJS		=	$(addprefix $(DIR_BIN)/stack/, $(STACK_SRCS:.c=.o))

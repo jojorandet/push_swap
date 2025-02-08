@@ -6,13 +6,13 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 12:33:00 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 21:39:22 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	find_element_position(t_stack *stack, int n)
+/*int	find_element_position(t_stack *stack, int n)
 {
 	int	*cursor;
 	int	i;
@@ -24,7 +24,7 @@ int	find_element_position(t_stack *stack, int n)
 	return (i);
 }
 
-void	push_index_to_b(t_stack *stack, t_string *string, int index)
+void	push_index_to_b(t_stack *stack, int index)
 {
 	int	i;
 	int	n;
@@ -34,28 +34,28 @@ void	push_index_to_b(t_stack *stack, t_string *string, int index)
 	{
 		n = stack->len_a - i;
 		while (n--)
-			rev_rot_a(stack, string);
+			rev_rot_a(stack);
 	}
 	else
 	{
 		while (i--)
-			rot_a(stack, string);
+			rot_a(stack);
 	}
-	push_b(stack, string);
+	push_b(stack);
 }
 
-void	sort_five_elements(t_stack *stack, t_string *string)
+void	sort_five_elements(t_stack *stack)
 {
-	push_index_to_b(stack, string, 0);
+	push_index_to_b(stack, 0);
 	if (stack->len_a > 3)
-		push_index_to_b(stack, string, 1);
-	sort_three_elements(stack, string);
-	push_a(stack, string);
+		push_index_to_b(stack, 1);
+	sort_three_elements(stack);
+	push_a(stack);
 	if (stack->len_b)
-		push_a(stack, string);
-}
+		push_a(stack);
+}*/
 
-void	sort_three_elements(t_stack *stack, t_string *string)
+void	sort_three_elements(t_stack *stack)
 {
 	int	*top;
 	int	*middle;
@@ -67,41 +67,38 @@ void	sort_three_elements(t_stack *stack, t_string *string)
 	if ((*top < *middle) && (*middle < *bottom))
 		return ;
 	if ((*top < *middle) && (*middle > *bottom) && (*top > *bottom))
-		swap_a(stack, string);
+		swap_a(stack);
 	if ((*top > *middle) && (*middle > *bottom) && (*bottom < *top))
 	{
-		swap_a(stack, string);
-		rev_rot_a(stack, string);
+		swap_a(stack);
+		rev_rot_a(stack);
 	}
 	if ((*top > *middle) && (*middle < *bottom) && (*bottom > *middle))
-		rot_a(stack, string);
+		rot_a(stack);
 	if ((*top < *middle) && (*middle > *bottom) && (*bottom > *top))
 	{
-		swap_a(stack, string);
-		rot_a(stack, string);
+		swap_a(stack);
+		rot_a(stack);
 	}
 	if ((*top < *middle) && (*middle > *bottom) && (*bottom < *top))
-		rev_rot_a(stack, string);
+		rev_rot_a(stack);
 }
 
-void	sort_two_elements(t_stack *stack, t_string *string)
+void	sort_two_elements(t_stack *stack)
 {
-	int i;
-	
-	i = 0;
-	if (stack->values[i] > stack->values[i + 1])
-		swap_a(stack, string);
+	if (stack->values[0] != 0)
+		swap_a(stack);
 }
 
-void	sorting(t_stack *stack, t_string *string)
+void	sorting(t_stack *stack)
 {
 	if (stack->len == 2)
-		sort_two_elements(stack, string);
+		sort_two_elements(stack);
 	else if (stack->len == 3)
-		sort_three_elements(stack, string);
-	else if (stack->len <= 5)
-		sort_five_elements(stack, string);
+		sort_three_elements(stack);
+	/*else if (stack->len <= 5)
+		sort_five_elements(stack);*/
 	else
-		prepare_sort(stack, string);
+		prepare_sort(stack);
 	return ;
 }

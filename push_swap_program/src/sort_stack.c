@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:01:59 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/07 19:21:52 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/08 21:31:21 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	check_exit(t_stack *stack, int	*cursor, int median)
 	return (0);
 }
 
-static void	sort_with_median(t_stack *stack, t_string *string, int median)
+static void	sort_with_median(t_stack *stack, int median)
 {
 	int	*cursor;
 	int	still_smaller_to_check;
@@ -34,17 +34,15 @@ static void	sort_with_median(t_stack *stack, t_string *string, int median)
 	{
 		if (*cursor <= median)
 		{
-			push_b(stack, string);
+			push_b(stack);
 			cursor++;
 		}
 		else
 		{
-			rot_a(stack, string);
+			rot_a(stack);
 			still_smaller_to_check = check_exit(stack, cursor, median);
 		}
 	}
-	// printf("the array after sorting according to the median is:\n\n");
-	// print_array(stack);
 }
 
 int	find_median(t_stack *stack)	
@@ -54,13 +52,12 @@ int	find_median(t_stack *stack)
 	return (stack->len / 2);
 }
 
-void	prepare_sort(t_stack *stack, t_string *string)
+void	prepare_sort(t_stack *stack)
 {
-	(void)string;
 	int	median;
 	
 	median = find_median(stack);
-	sort_with_median(stack, string, median);
+	sort_with_median(stack, median);
 }
 
 
@@ -76,7 +73,7 @@ void	prepare_sort(t_stack *stack, t_string *string)
 
 
 /*
-static void	sort_with_median(t_stack *stack, t_string *string, int median)
+static void	sort_with_median(t_stack *stack, int median)
 {
 	int	*cursor;
 	int n;
@@ -88,7 +85,7 @@ static void	sort_with_median(t_stack *stack, t_string *string, int median)
 	{
 		if (*cursor <= median)
 		{
-			push_b(stack, string);
+			push_b(stack);
 			cursor = stack->top;
 		}
 		else if (*cursor > median)
