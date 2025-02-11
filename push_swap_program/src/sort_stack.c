@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 12:01:59 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 21:31:21 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/11 15:19:11 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	check_exit(t_stack *stack, int	*cursor, int median)
+/*static int	check_exit(t_stack *stack, int	*cursor, int median)
 {
 	while (cursor <= stack->end)
 	{
@@ -58,7 +58,7 @@ void	prepare_sort(t_stack *stack)
 	
 	median = find_median(stack);
 	sort_with_median(stack, median);
-}
+}*/
 
 
 //with the indesx sorting, i can easily find the median as well as the values above or below it :)

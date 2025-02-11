@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 12:46:13 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/11 16:03:05 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,6 @@ void	check_doubles(t_stack *stack)
 		i++;
 	}
 	return ;
-}
-
-void	check_if_int(int argc, char **argv, t_stack *stack)
-{
-	int	i;
-
-	i = 1;
-	while (argv[i] && i < argc)
-	{
-		if (!is_int(argv[i]))
-			push_swap_exit(stack, "Input Error: argument is not int.\n");
-		i++;
-	}
 }
 
 int	is_int(char *s)

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   basic_sorting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 21:39:22 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/11 14:36:25 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-/*int	find_element_position(t_stack *stack, int n)
+int	find_element_position(t_stack *stack, int n)
 {
 	int	*cursor;
 	int	i;
@@ -51,9 +51,11 @@ void	sort_five_elements(t_stack *stack)
 		push_index_to_b(stack, 1);
 	sort_three_elements(stack);
 	push_a(stack);
-	if (stack->len_b)
+	if (stack->len_b) //after pushing a check if this worked 
 		push_a(stack);
-}*/
+	print_array(stack);
+	push_swap_exit(stack, "temp exit :)\n");
+}
 
 void	sort_three_elements(t_stack *stack)
 {
@@ -96,9 +98,9 @@ void	sorting(t_stack *stack)
 		sort_two_elements(stack);
 	else if (stack->len == 3)
 		sort_three_elements(stack);
-	/*else if (stack->len <= 5)
-		sort_five_elements(stack);*/
-	else
-		prepare_sort(stack);
+	else if (stack->len <= 5)
+		sort_five_elements(stack);
+	/*else
+		prepare_sort(stack);*/
 	return ;
 }
