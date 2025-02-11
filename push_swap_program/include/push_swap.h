@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 12:14:35 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/11 19:19:12 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ void	rev_rot_rr(t_stack *stack);
 void	sorting(t_stack *stack);
 void	sort_two_elements(t_stack *stack);
 void	sort_three_elements(t_stack *stack);
+
+//begining of the recursive call
+void	sort_stack_a(t_stack *stack);
 
 //big stack sorting
 void	prepare_sort(t_stack *stack);
