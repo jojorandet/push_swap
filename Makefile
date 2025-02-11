@@ -26,14 +26,15 @@ STACK_SRCS		= 	atoll_long_push_swap.c \
 					stack_utils.c
 
 PROGRAM_SRCS	=	main.c \
+					index_convert.c \
 					push.c \
 					swap.c \
 					rotate.c \
 					rev_rotate.c \
-					basic_sorting.c \
-					index_convert.c \
-					push_swap_exit.c \
-					split_a.c 
+					dispatch_sorting.c \
+					sort_small_n.c \
+					stack_manipulation_operations.c \
+					push_swap_exit.c 
 
 STACK_OBJS		=	$(addprefix $(DIR_BIN)/stack/, $(STACK_SRCS:.c=.o))
 PROGRAM_OBJS	=	$(addprefix $(DIR_BIN)/program/, $(PROGRAM_SRCS:.c=.o))
