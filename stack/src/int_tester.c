@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   int_tester.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/10 15:23:02 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/11 12:46:13 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "../include/stack.h"
 
 void	check_array_len(t_stack *stack, char **array_of_strings)
 {
-	printf("Check_array_len function entered\n\n");
 	int	i;
 	
 	i = 0;
@@ -22,7 +21,6 @@ void	check_array_len(t_stack *stack, char **array_of_strings)
 	{
 		if (array_of_strings[i][0] == '-')
 		{
-			printf("after entering check_array len, string len is %zu\n\n", ft_strlen(array_of_strings[i]));
 			if (ft_strlen(array_of_strings[i]) > 11)
 				push_swap_exit(stack, "Input error: input too long!\n");
 		}
@@ -37,7 +35,6 @@ void	check_array_len(t_stack *stack, char **array_of_strings)
 
 void	check_doubles(t_stack *stack)
 {
-	printf("Check_doubles function entered\n\n");
 	int	i;
 	int	j;
 
@@ -58,7 +55,6 @@ void	check_doubles(t_stack *stack)
 
 void	check_if_int(int argc, char **argv, t_stack *stack)
 {
-	printf("Check_if_int function entered\n\n");
 	int	i;
 
 	i = 1;

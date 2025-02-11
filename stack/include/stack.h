@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:27:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/10 13:29:43 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/11 12:14:36 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <limits.h>
 # include <stdio.h>
 # include "../../libft/libft.h"
-# include "push_swap.h"
+# include "../../push_swap_program/include/push_swap.h"
 
 
 typedef struct s_stack

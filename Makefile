@@ -49,8 +49,8 @@ LIBRARIES		=	-lft
 all: $(NAME)
 
 $(NAME): $(ALL_OBJ) | $(DIR_BIN)
-	@make -C $(DIR_LIBFT)
-	@make bonus -C $(DIR_LIBFT)
+	@make -s -C $(DIR_LIBFT)
+	@make -s bonus -C $(DIR_LIBFT)
 	@$(CC) $(ALL_OBJ) $(CFLAGS) $(LIBRARY_PATH) $(LIBRARIES) -o $@
 	@echo "ready to execute $(NAME)\n"
 #$@ expands to the target which is name. the compilation a.out goes into the push_swap
@@ -73,11 +73,11 @@ $(DIR_BIN)/program:
 #-----------------------clean functions------------------------#
 
 clean:
-	@make clean -C $(DIR_LIBFT)
+	@make -s clean -C $(DIR_LIBFT)
 	@rm -rf $(DIR_BIN)
 
 fclean:	clean
-	@make fclean -C $(DIR_LIBFT)
+	@make -s fclean -C $(DIR_LIBFT)
 	@rm -rf $(NAME)
 #takes away the push_swap executable
 
