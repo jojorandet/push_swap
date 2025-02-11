@@ -20,7 +20,8 @@ CFLAGS = -Wall -Werror -Wextra -g
 #---------------------SOURCE------------------------#
 #I looks for the header files, and then L looks for the .a and l links them together 
 
-STACK_SRCS		= 	int_tester.c \
+STACK_SRCS		= 	atoll_long_push_swap.c \
+					int_tester.c \
 					parsing.c \
 					stack_utils.c
 

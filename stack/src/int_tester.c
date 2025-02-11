@@ -6,21 +6,23 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 22:19:47 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/10 15:23:02 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
-void	check_int_max_min(t_stack *stack, char **array_of_strings)
+void	check_array_len(t_stack *stack, char **array_of_strings)
 {
+	printf("Check_array_len function entered\n\n");
 	int	i;
-
+	
 	i = 0;
 	while (array_of_strings[i])
 	{
 		if (array_of_strings[i][0] == '-')
 		{
+			printf("after entering check_array len, string len is %zu\n\n", ft_strlen(array_of_strings[i]));
 			if (ft_strlen(array_of_strings[i]) > 11)
 				push_swap_exit(stack, "Input error: input too long!\n");
 		}
@@ -35,6 +37,7 @@ void	check_int_max_min(t_stack *stack, char **array_of_strings)
 
 void	check_doubles(t_stack *stack)
 {
+	printf("Check_doubles function entered\n\n");
 	int	i;
 	int	j;
 
@@ -55,16 +58,10 @@ void	check_doubles(t_stack *stack)
 
 void	check_if_int(int argc, char **argv, t_stack *stack)
 {
+	printf("Check_if_int function entered\n\n");
 	int	i;
 
 	i = 1;
-	printf("input received: %s\n", argv[1]);
-	printf("First arg characters: \n");
-	for(int j = 0; argv[1][j]; j++)
-	{
-		printf("%c (%d) \n", argv[1][j], argv[1][j]);
-	}
-	printf("\n");
 	while (argv[i] && i < argc)
 	{
 		if (!is_int(argv[i]))

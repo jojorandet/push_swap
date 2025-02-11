@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:27:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 16:10:01 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/10 13:29:43 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	free_stack(t_stack *stack);
 void	parse_arguments(int argc, char **argv, t_stack *stack);
 void	check_if_int(int argc, char **argv, t_stack *stack);
 int		is_int(char *s);
-void	check_int_max_min(t_stack *stack, char **array_of_strings);
+void	check_array_len(t_stack *stack, char **array_of_strings);
+int		atoll_push_swap(t_stack *stack, const char *str);
 void	check_doubles(t_stack *stack);
 
 #endif
