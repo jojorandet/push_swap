@@ -25,7 +25,6 @@ void	sort_a(t_stack *stack, int len)
 		if (*(stack->top) > *(stack->top + 1))
 		{
 			swap_a(stack);
-			print_array(stack);
 		}
 		return ;
 	}
@@ -39,7 +38,6 @@ void	sort_a(t_stack *stack, int len)
 		else
 			push_b(stack);
 	}
-	print_array(stack);
 	sort_a(stack, len - sub_len);
-	push_swap_exit(stack, "temp exit :)\n");
+	push_swap_exit(stack, "");
 }

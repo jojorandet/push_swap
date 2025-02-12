@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 12:13:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 22:22:09 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/12 22:47:42 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	push_a(t_stack *stack)
 	stack->top--;
 	stack->len_a++;
 	stack->len_b--;
-	printf("pa\n");
+	ft_putstr("pa\n");
 }
 
 void	push_b(t_stack *stack)
@@ -29,5 +29,5 @@ void	push_b(t_stack *stack)
 	stack->top++;
 	stack->len_a--;
 	stack->len_b++;
-	printf("pb\n");
+	ft_putstr("pb\n");
 }

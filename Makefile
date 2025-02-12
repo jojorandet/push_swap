@@ -39,6 +39,8 @@ PROGRAM_SRCS	=	push_swap.c \
 
 STACK_OBJS		=	$(addprefix $(DIR_BIN)/stack/, $(STACK_SRCS:.c=.o))
 PROGRAM_OBJS	=	$(addprefix $(DIR_BIN)/program/, $(PROGRAM_SRCS:.c=.o))
+ALL_SRCS		=	$(addprefix stack/src/, $(STACK_SRCS))
+ALL_SRCS		+=	$(addprefix push_swap_program/src/, $(PROGRAM_SRCS))
 ALL_OBJ			=	$(STACK_OBJS) $(PROGRAM_OBJS)
 
 #----------Libraries and linking --------------------#
@@ -55,7 +57,6 @@ $(NAME): $(ALL_OBJ) | $(DIR_BIN)
 	@make -s -C $(DIR_LIBFT)
 	@make -s bonus -C $(DIR_LIBFT)
 	@$(CC) $(ALL_OBJ) $(CFLAGS) $(LIBRARY_PATH) $(LIBRARIES) -o $@
-	@echo "ready to execute $(NAME)\n"
 #$@ expands to the target which is name. the compilation a.out goes into the push_swap
 
 #rule for stack objects
@@ -73,6 +74,9 @@ $(DIR_BIN)/stack:
 
 $(DIR_BIN)/program:
 	@mkdir -p $@
+
+wasm: 
+	docker run --rm -v $(shell pwd):/src emscripten/emsdk emcc $(ALL_SRCS) ./libft/*.c -o $(NAME).wasm
 #-----------------------clean functions------------------------#
 
 clean:

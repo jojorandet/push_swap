@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:56:27 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 22:22:05 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/12 22:50:43 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	rot_a(t_stack *stack)
 		cursor_rot++;
 	}
 	*(stack->end) = temp;
-	printf("ra\n");
+	ft_putstr("ra\n");
 }
 
 void	rot_b(t_stack *stack)
@@ -41,11 +41,12 @@ void	rot_b(t_stack *stack)
 		cursor--;
 	}
 	*cursor = temp;
-	printf("rb\n");
+	ft_putstr("rb\n");
 }
 
 void	rot_rr(t_stack *stack)
 {
 	rot_a(stack);
 	rot_b(stack);
+	ft_putstr("rr\n");
 }

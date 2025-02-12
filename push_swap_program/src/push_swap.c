@@ -32,11 +32,11 @@ int	main(int argc, char **argv)
 	t_stack		stack;
 
 	parse_arguments(argc, argv, &stack);
-	printf("original array:\n");
-	print_array(&stack);
+	//printf("original array:\n");
+	//print_array(&stack);
 	index_convert(&stack);
-	printf("indexed array:\n");
-	print_array(&stack);
+	//printf("indexed array:\n");
+	//print_array(&stack);
 	sorting(&stack);
 	//printf("sorted array\n");
 	//print_array(&stack);
