@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: yourlogin <youremail@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/19 20:23:25 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 22:27:12 by jrandet          ###   ########.fr       */
+/*   Created: 2025/02/12 15:30:49 by yourlogin         #+#    #+#             */
+/*   Updated: 2025/02/12 15:30:49 by yourlogin        ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,11 @@ void	sorting(t_stack *stack);
 void	sort_two_elements(t_stack *stack);
 void	sort_three_elements(t_stack *stack);
 void	sort_five_elements(t_stack *stack);
-
-//begining of the recursive call
-void	sort_stack_a(t_stack *stack);
-
-//big stack sorting
-void	prepare_sort(t_stack *stack);
-
-//sorting functions
 void	push_index_to_b(t_stack *stack, int index);
 int		find_element_position(t_stack *stack, int n);
+
+//begining of the recursive call
+void    sort_a(t_stack *stack, int len);
 
 //print the stack
 void	print_array(t_stack *stack);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: yourlogin <youremail@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/19 17:07:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/08 21:38:20 by jrandet          ###   ########.fr       */
+/*   Created: 2025/02/12 15:29:39 by yourlogin         #+#    #+#             */
+/*   Updated: 2025/02/12 15:29:39 by yourlogin        ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	printf("indexed array:\n");
 	print_array(&stack);
 	sorting(&stack);
-	printf("sorted array\n");
-	print_array(&stack);
+	//printf("sorted array\n");
+	//print_array(&stack);
 	return (0);
 }

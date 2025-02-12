@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   special_cases.c                                    :+:      :+:    :+:   */
+/*   sort_small_n.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: yourlogin <youremail@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 21:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 20:40:58 by jrandet          ###   ########.fr       */
+/*   Created: 2025/02/12 15:33:03 by yourlogin         #+#    #+#             */
+/*   Updated: 2025/02/12 15:33:03 by yourlogin        ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,12 @@ void	sort_three_elements(t_stack *stack)
 	}
 	if ((*top < *middle) && (*middle > *bottom) && (*bottom < *top))
 		rev_rot_a(stack);
+	push_swap_exit(stack, "temp exit :)\n");
 }
 
 void	sort_two_elements(t_stack *stack)
 {
 	if (stack->values[0] != 0)
 		swap_a(stack);
+	push_swap_exit(stack, "temp exit :)\n");
 }
