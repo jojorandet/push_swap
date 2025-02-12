@@ -18,14 +18,20 @@ void	sort_a(t_stack *stack, int len)
 	int	*pivot;
 	int	pivot_i;
 
+	if (len <= 1)
+		return ;
 	if (len == 2)
 	{
-		if (stack->top > stack->top + 1)
+		if (*(stack->top) > *(stack->top + 1))
+		{
 			swap_a(stack);
+			print_array(stack);
+		}
+		return ;
 	}
 	sub_len = len / 2;
 	pivot = stack->top + sub_len;
-	pivot_i = pivot - stack->top;
+	pivot_i = pivot - stack->values;
 	while (stack->top != pivot)
 	{
 		if (*(stack->top) > pivot_i)
@@ -34,6 +40,6 @@ void	sort_a(t_stack *stack, int len)
 			push_b(stack);
 	}
 	print_array(stack);
-	//sort_a(stack, len - sub_len);
+	sort_a(stack, len - sub_len);
 	push_swap_exit(stack, "temp exit :)\n");
 }
