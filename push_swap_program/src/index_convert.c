@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 16:15:28 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 22:24:32 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/12 11:09:43 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ static int	get_smaller_count(t_stack *stack, int *values, int nb)
 	while (i < stack->len)
 	{
 		if (values[i] < nb)
+		{
 			counter++;
+			if (counter == stack->len - 1)
+				break ;
+		}
 		i++;
 	}
 	return (counter);
@@ -41,8 +45,8 @@ static int	*value_creation(t_stack *stack)
 
 void	index_convert(t_stack *stack)
 {
-	int	count_smaller;
 	int i;
+	int	count_smaller;
 	int	*values;
 	
 	values = value_creation(stack);

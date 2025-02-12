@@ -25,7 +25,7 @@ STACK_SRCS		= 	atoll_long_push_swap.c \
 					parsing.c \
 					stack_utils.c
 
-PROGRAM_SRCS	=	main.c \
+PROGRAM_SRCS	=	push_swap.c \
 					index_convert.c \
 					push.c \
 					swap.c \

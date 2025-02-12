@@ -3,14 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   int_tester.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 16:03:05 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/12 10:34:25 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/stack.h"
+
+void	check_doubles(t_stack *stack)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (stack && stack->values && (i < stack->len))
+	{
+		j = i + 1;
+		while (j < stack->len)
+		{
+			if (stack->values[i] == stack->values[j])
+				push_swap_exit(stack, "Input Error: a double is found in input.\n");
+			j++;
+		}
+		i++;
+	}
+	return ;
+}
 
 void	check_array_len(t_stack *stack, char **array_of_strings)
 {
@@ -31,26 +51,6 @@ void	check_array_len(t_stack *stack, char **array_of_strings)
 		}
 		i++;
 	}
-}
-
-void	check_doubles(t_stack *stack)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (stack && stack->values && (i < stack->len))
-	{
-		j = i + 1;
-		while (j < stack->len)
-		{
-			if (stack->values[i] == stack->values[j])
-				push_swap_exit(stack, "Input Error: a double is found in input.\n");
-			j++;
-		}
-		i++;
-	}
-	return ;
 }
 
 int	is_int(char *s)
