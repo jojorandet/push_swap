@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dispatch_sorting.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:06:32 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/13 18:04:47 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/13 22:30:45 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sorting(t_stack *stack)
 		sort_two_elements(stack);
 	else if (stack->len == 3)
 		sort_three_elements(stack);
-	else if (stack->len <= 5)
+	else if (stack->len == 5)
 		sort_five_elements(stack);
 	else
 		sort_a(stack, stack->len);

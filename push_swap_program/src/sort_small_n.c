@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:06:46 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/13 21:01:26 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/13 22:36:45 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	sort_three_elements(t_stack *stack)
 	}
 	if ((*top < *middle) && (*middle > *bottom) && (*bottom < *top))
 		rev_rot_a(stack);
-	push_swap_exit(stack, NULL);
 }
 
 void	sort_two_elements(t_stack *stack)
