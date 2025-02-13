@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small_n.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yourlogin <youremail@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 15:33:03 by yourlogin         #+#    #+#             */
-/*   Updated: 2025/02/12 15:33:03 by yourlogin        ###   ########.ch       */
+/*   Created: 2025/02/13 15:06:46 by jrandet           #+#    #+#             */
+/*   Updated: 2025/02/13 18:04:45 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

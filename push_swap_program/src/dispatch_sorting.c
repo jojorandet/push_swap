@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dispatch_sorting.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yourlogin <youremail@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 14:44:38 by yourlogin         #+#    #+#             */
-/*   Updated: 2025/02/12 15:19:34 by yourlogin        ###   ########.ch       */
+/*   Created: 2025/02/13 15:06:32 by jrandet           #+#    #+#             */
+/*   Updated: 2025/02/13 18:04:47 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

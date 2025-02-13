@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yourlogin <youremail@student.42lausanne.ch>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 11:25:53 by yourlogin         #+#    #+#             */
-/*   Updated: 2025/02/13 11:25:53 by yourlogin        ###   ########.ch       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #include "../include/push_swap.h"
 
@@ -40,5 +30,6 @@ int	main(int argc, char **argv)
 	sorting(&stack);
 	printf("sorted array\n");
 	print_array(&stack);
+	push_swap_exit(&stack, "exited program");
 	return (0);
 }

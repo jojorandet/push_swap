@@ -55,6 +55,7 @@ int		find_element_position(t_stack *stack, int n);
 
 //begining of the recursive call
 void    sort_a(t_stack *stack, int len);
+void	sort_b(t_stack *stack, int len);
 
 //print the stack
 void	print_array(t_stack *stack);
