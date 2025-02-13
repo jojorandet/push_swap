@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:05:58 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/13 20:58:33 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/13 22:22:34 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,10 @@ void	sort_a(t_stack *stack, int len)
 	if (len == 2)
 	{
 		if (*(stack->top) > *(stack->top + 1))
-		{
-			DEBUG("recursion depth done\n");
 			swap_a(stack);
-			print_array(stack);
-		}
-		if (stack->top + 1 == stack->end)
-			return ;
+		DEBUG("recursion depth done\n");
+		print_array(stack);
+		return ;
 	}
 	sub_len = len / 2;
 	pivot = stack->top + sub_len;

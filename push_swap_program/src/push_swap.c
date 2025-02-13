@@ -10,8 +10,14 @@ void	print_array(t_stack *stack)
 	while (i < stack->len)
 	{
 		if (&stack->values[i] == stack->top)
-			DEBUG(" | ");
-		DEBUG(" %d ", stack->values[i]);
+		{
+			DEBUG("|")
+		}
+		else
+		{
+			DEBUG(" ")
+		}
+		DEBUG(" %d ", stack->values[i])
 		i++;
 	}
 	DEBUG("\n\n");
@@ -30,6 +36,6 @@ int	main(int argc, char **argv)
 	sorting(&stack);
 	DEBUG("sorted array\n");
 	print_array(&stack);
-	push_swap_exit(&stack, "exited program");
+	push_swap_exit(&stack, NULL);
 	return (0);
 }

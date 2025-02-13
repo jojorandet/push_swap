@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:06:08 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/13 20:58:33 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/13 22:20:53 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,18 @@ void	sort_b(t_stack *stack, int len)
 	if (len == 2)
 	{
 		if (*(stack->top - 2) > *(stack->top - 1))
-		{
 			swap_b(stack);
-			DEBUG("swa_b done\n");
-			print_array(stack);
-		}
 		push_a(stack);
 		push_a(stack);
-		if ((stack->top - 2) == stack->values)
-		{
-			DEBUG("end of recursion for b\n");
-			return ;
-		}
+		return ;
 	}
 	sub_len = len / 2;
 	pivot = stack->top - sub_len;
 	pivot_i = pivot - stack->values;
-	DEBUG("branch swap_b\n");
-	DEBUG("len is worth %d\n", len);
-	DEBUG("pivot_i is worth %d\n", pivot_i);
-	DEBUG("stack->top is worth %d\n", *(stack->top));
+	DEBUG("branch swap_b\n")
+	DEBUG("len is worth %d\n", len)
+	DEBUG("pivot_i is worth %d\n", pivot_i)
+	DEBUG("stack->top is worth %d\n", *(stack->top))
 	while (stack->top != pivot)
 	{
 		if (*(stack->top - 1) >= pivot_i)
