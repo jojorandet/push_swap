@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small_n.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:06:46 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/13 18:04:45 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/13 21:01:26 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sort_five_elements(t_stack *stack)
 	if (stack->len_b) //after pushing a check if this worked 
 		push_a(stack);
 	print_array(stack);
-	push_swap_exit(stack, "temp exit :)\n");
+	push_swap_exit(stack, NULL);
 }
 
 void	sort_three_elements(t_stack *stack)
@@ -52,12 +52,12 @@ void	sort_three_elements(t_stack *stack)
 	}
 	if ((*top < *middle) && (*middle > *bottom) && (*bottom < *top))
 		rev_rot_a(stack);
-	push_swap_exit(stack, "temp exit :)\n");
+	push_swap_exit(stack, NULL);
 }
 
 void	sort_two_elements(t_stack *stack)
 {
 	if (stack->values[0] != 0)
 		swap_a(stack);
-	push_swap_exit(stack, "temp exit :)\n");
+	push_swap_exit(stack, NULL);
 }

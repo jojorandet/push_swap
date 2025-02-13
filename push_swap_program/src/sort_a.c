@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:05:58 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/13 18:21:20 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/13 20:58:33 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	sort_a(t_stack *stack, int len)
 	{
 		if (*(stack->top) > *(stack->top + 1))
 		{
-			printf("recursion depth done\n");
+			DEBUG("recursion depth done\n");
 			swap_a(stack);
 			print_array(stack);
 		}
@@ -34,9 +34,9 @@ void	sort_a(t_stack *stack, int len)
 	sub_len = len / 2;
 	pivot = stack->top + sub_len;
 	pivot_i = pivot - stack->values;
-	printf("new branch sort_a\n");
-	printf("len is worth %d\n", len);
-	printf("pivot_i is worth %d\n", pivot_i);
+	DEBUG("new branch sort_a\n");
+	DEBUG("len is worth %d\n", len);
+	DEBUG("pivot_i is worth %d\n", pivot_i);
 	while (stack->top != pivot)
 	{
 		if (*(stack->top) >= pivot_i)

@@ -10,11 +10,11 @@ void	print_array(t_stack *stack)
 	while (i < stack->len)
 	{
 		if (&stack->values[i] == stack->top)
-			printf(" | ");
-		printf(" %d ", stack->values[i]);
+			DEBUG(" | ");
+		DEBUG(" %d ", stack->values[i]);
 		i++;
 	}
-	printf("\n\n");
+	DEBUG("\n\n");
 }
 
 int	main(int argc, char **argv)
@@ -22,13 +22,13 @@ int	main(int argc, char **argv)
 	t_stack		stack;
 
 	parse_arguments(argc, argv, &stack);
-	printf("original array:\n");
+	DEBUG("original array:\n");
 	print_array(&stack);
 	index_convert(&stack);
-	printf("indexed array:\n");
+	DEBUG("indexed array:\n");
 	print_array(&stack);
 	sorting(&stack);
-	printf("sorted array\n");
+	DEBUG("sorted array\n");
 	print_array(&stack);
 	push_swap_exit(&stack, "exited program");
 	return (0);
