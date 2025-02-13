@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yourlogin <youremail@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 15:29:39 by yourlogin         #+#    #+#             */
-/*   Updated: 2025/02/12 15:29:39 by yourlogin        ###   ########.ch       */
+/*   Created: 2025/02/13 11:25:53 by yourlogin         #+#    #+#             */
+/*   Updated: 2025/02/13 11:25:53 by yourlogin        ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int	main(int argc, char **argv)
 	t_stack		stack;
 
 	parse_arguments(argc, argv, &stack);
-	//printf("original array:\n");
-	//print_array(&stack);
+	printf("original array:\n");
+	print_array(&stack);
 	index_convert(&stack);
-	//printf("indexed array:\n");
-	//print_array(&stack);
+	printf("indexed array:\n");
+	print_array(&stack);
 	sorting(&stack);
-	//printf("sorted array\n");
-	//print_array(&stack);
+	printf("sorted array\n");
+	print_array(&stack);
 	return (0);
 }
