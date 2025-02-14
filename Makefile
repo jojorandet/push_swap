@@ -12,7 +12,8 @@ DIR_LIBFT	=	./libft
 #-----------------COMP FLAGS------------------------#
 
 UNAME := $(shell uname)
-CFLAGS = -Wall -Werror -Wextra -g
+CC		=	gcc
+CFLAGS	= -Wall -g -O0 -gdwarf-2 -Werror -Wextra 
 #ifeq ($(UNAME), Darwin)
 #CFLAGS += -fsanitize=address
 #endif
