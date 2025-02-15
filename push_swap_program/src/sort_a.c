@@ -5,44 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 15:05:58 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/13 22:22:34 by jrandet          ###   ########.fr       */
+/*   Created: 2025/02/15 18:35:24 by jrandet           #+#    #+#             */
+/*   Updated: 2025/02/15 19:28:42 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+
+
+void	sort(t_stack *stack, int len, int pivot_value, int *pushed_count, int *operations )
+
 void	sort_a(t_stack *stack, int len)
 {
 	int	sub_len;
-	int	*pivot;
-	int	pivot_i;
-
+	int	pivot_value;
+	int	pushed_count;
+	int	operations;
+	
 	if (len <= 1)
-		return ;
+		return;
 	if (len == 2)
 	{
 		if (*(stack->top) > *(stack->top + 1))
 			swap_a(stack);
-		DEBUG("recursion depth done\n");
-		print_array(stack);
 		return ;
 	}
 	sub_len = len / 2;
-	pivot = stack->top + sub_len;
-	pivot_i = pivot - stack->values;
-	DEBUG("new branch sort_a\n");
-	DEBUG("len is worth %d\n", len);
-	DEBUG("pivot_i is worth %d\n", pivot_i);
-	while (stack->top != pivot)
+	pivot_value = *(stack->top + sub_len);
+	pushed_count = 0;
+	operations = 0;
+
+	while ((pushed_count < sub_len) && (operations < len))
 	{
-		if (*(stack->top) >= pivot_i)
-			rot_a(stack);
-		else
+		if (*(stack->top) < pivot_value)
+		{
 			push_b(stack);
+			pushed_count++;
+		}
+		else
+		{
+			rot_a(stack);
+		}
+		operations++;
 	}
-    print_array(stack);
+	while (operations > len - pushed_count)
+	{
+		rev_rot_a(stack);
+		operations--;
+	}
 	sort_a(stack, len - sub_len);
-	sort_b(stack, sub_len);
-	//push_swap_exit(stack, "");
+	sort_b(stack, len);
 }

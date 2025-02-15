@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_b.c                                           :+:      :+:    :+:   */
+/*   sort_a_old.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 15:06:08 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/13 22:28:22 by jrandet          ###   ########.fr       */
+/*   Created: 2025/02/13 15:05:58 by jrandet           #+#    #+#             */
+/*   Updated: 2025/02/15 18:25:02 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	sort_b(t_stack *stack, int len)
+void	sort_a_old(t_stack *stack, int len)
 {
 	int	sub_len;
 	int	*pivot;
@@ -22,28 +22,27 @@ void	sort_b(t_stack *stack, int len)
 		return ;
 	if (len == 2)
 	{
-		if (*(stack->top - 2) > *(stack->top - 1))
-			swap_b(stack);
-		push_a(stack);
-		push_a(stack);
+		if (*(stack->top) > *(stack->top + 1))
+			swap_a(stack);
+		DEBUG("recursion depth done\n");
+		print_array(stack);
 		return ;
 	}
 	sub_len = len / 2;
-	pivot = stack->top - sub_len;
+	pivot = stack->top + sub_len;
 	pivot_i = pivot - stack->values;
-	DEBUG("branch swap_b\n")
-	DEBUG("len is worth %d\n", len)
-	DEBUG("pivot_i is worth %d\n", pivot_i)
-	DEBUG("stack->top is worth %d\n", *(stack->top))
+	DEBUG("new branch sort_a\n");
+	DEBUG("len is worth %d\n", len);
+	DEBUG("pivot_i is worth %d\n", pivot_i);
 	while (stack->top != pivot)
 	{
-		if (*(stack->top - 1) >= pivot_i)
-			push_a(stack);
+		if (*(stack->top) >= pivot_i)
+			rot_a(stack);
 		else
-			rot_b(stack);
+			push_b(stack);
 	}
-	print_array(stack);
-	sort_a(stack, sub_len);
-	sort_b(stack, (len - sub_len));
-	//push_swap_exit(stack, " ");
+    print_array(stack);
+	sort_a(stack, len - sub_len);
+	sort_b(stack, sub_len);
+	//push_swap_exit(stack, "");
 }

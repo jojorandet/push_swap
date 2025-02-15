@@ -20,7 +20,7 @@
 # include "../../libft/libft.h"
 # include "../../stack/include/stack.h"
 
-# define DEBUG_ENABLE 0
+# define DEBUG_ENABLE 1
 # define DEBUG(...) if (DEBUG_ENABLE) printf(__VA_ARGS__);
 
 typedef struct s_stack t_stack;
