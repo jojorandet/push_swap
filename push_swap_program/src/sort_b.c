@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 19:57:05 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/16 19:59:19 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/16 20:25:43 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static void main_sorting_b(t_stack *stack, int len, int sub_len)
 {
 	int	pivot_i;
 	int	pushed_count;
+	int	rot_count;
 	int	ops_done_count;
 
 	pivot_i = (stack->top_i) - sub_len;
@@ -51,12 +52,14 @@ static void main_sorting_b(t_stack *stack, int len, int sub_len)
 	DEBUG("pivot_i is worth %d\n", pivot_i);
 	pushed_count = 0;
 	ops_done_count = 0;
+	rot_count = 0;
 	while ((pushed_count < sub_len) && (ops_done_count < len))
 	{
 		if (*(stack->top - 1) < pivot_i)
 		{
 			rot_b(stack);
 			print_array(stack, "top - 1 < pivot i, rotb");
+			rot_count++;
 		}
 		else
 		{
@@ -69,11 +72,11 @@ static void main_sorting_b(t_stack *stack, int len, int sub_len)
 	}
 	if (sub_len < ((stack->top - 1) - stack->values))
 	{
-		while (ops_done_count > (len - pushed_count))
+		while (rot_count)
 		{
 			rev_rot_b(stack);
 			print_array(stack, "roll back rev rotate b");
-			ops_done_count--;
+			rot_count--;
 		}
 		print_array(stack, "stack after main_sorting_b");
 	}
@@ -86,17 +89,7 @@ void	sort_b(t_stack *stack, int len)
 	DEBUG("SORT B\n\n");
 	if (len <= 1)
 	{
-		DEBUG("*******len is 1 in sort b*********\n");
-		if (*(stack->top - 1) == (*(stack->top) - 1))
-		{
-			push_a(stack);
-			print_array(stack, " len == 1, element pushed to a as smaller by one.\n");
-		}
-		else
-		{
-			rot_b(stack);
-			print_array(stack, "len == 1, element rb.\n");
-		}
+		push_a(stack);
 		return ;
 	}
 	if (len == 2)

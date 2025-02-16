@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:35:24 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/16 19:53:55 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/16 20:27:35 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	main_sorting_a(t_stack *stack, int len, int sub_len)
 {
 	int	pivot_i;
 	int	pushed_count;
+	int	rot_count;
 	int	ops_done_count;
 
 	pivot_i = stack->top_i + sub_len;
@@ -25,6 +26,7 @@ static void	main_sorting_a(t_stack *stack, int len, int sub_len)
 	DEBUG("pivot_i is worth %d\n\n", pivot_i);
 	pushed_count = 0;
 	ops_done_count = 0;
+	rot_count = 0;
 	while ((pushed_count < sub_len) && (ops_done_count < len)) //they both start at 0 this is why i have the strictly smaller
 	{
 		if (*(stack->top) < pivot_i)
@@ -37,17 +39,18 @@ static void	main_sorting_a(t_stack *stack, int len, int sub_len)
 		{
 			rot_a(stack);
 			print_array(stack, "top >= pivot i, rota");
+			rot_count++;
 		}
 		ops_done_count++;
 		DEBUG("pushed = %d, op_d = %d\n\n", pushed_count, ops_done_count);
 	}
 	if (sub_len < (stack->end - stack->top))
 	{
-		while (ops_done_count > (len - pushed_count))
+		while (rot_count)
 		{
 			rev_rot_a(stack);
 			print_array(stack, "roll back rev rotate a");
-			ops_done_count--;
+			rot_count--;
 		}
 		print_array(stack, "stack after main_sorting_a");
 	}
@@ -60,7 +63,6 @@ void	sort_a(t_stack *stack, int len)
 	DEBUG("SORT A\n\n");
 	if (len <= 1)
 	{
-		DEBUG("**********len is 1 in sort a***********\n");
 		return;
 	}
 	if (len == 2)
@@ -76,5 +78,5 @@ void	sort_a(t_stack *stack, int len)
 	sub_len = len / 2;
 	main_sorting_a(stack, len, sub_len);
 	sort_a(stack, len - sub_len);
-	sort_b(stack, (sub_len));
+	sort_b(stack, sub_len);
 }
