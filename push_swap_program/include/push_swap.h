@@ -20,7 +20,7 @@
 # include "../../libft/libft.h"
 # include "../../stack/include/stack.h"
 
-# define DEBUG_ENABLE 1
+# define DEBUG_ENABLE 0
 # define DEBUG(...) if (DEBUG_ENABLE) printf(__VA_ARGS__);
 
 typedef struct s_stack t_stack;
@@ -61,7 +61,7 @@ void    sort_a(t_stack *stack, int len);
 void	sort_b(t_stack *stack, int len);
 
 //print the stack
-void	print_array(t_stack *stack);
+void	print_array(t_stack *stack, char *where_i_am);
 
 //exit function push swap (calls free stack)
 void	push_swap_exit(t_stack *stack, char *error);
