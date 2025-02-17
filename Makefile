@@ -31,7 +31,7 @@ PROGRAM_SRCS	=	push_swap.c \
 					push.c \
 					swap.c \
 					rotate.c \
-					sort_a_sorted.c \
+					sort_a.c \
 					sort_b.c \
 					rev_rotate.c \
 					dispatch_sorting.c \
