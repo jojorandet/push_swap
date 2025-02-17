@@ -61,7 +61,7 @@ void    sort_a(t_stack *stack, int len);
 void	sort_b(t_stack *stack, int len);
 
 //print the stack
-void	print_array(t_stack *stack);
+void	print_array(t_stack *stack, char *where_i_am);
 
 //exit function push swap (calls free stack)
 void	push_swap_exit(t_stack *stack, char *error);
