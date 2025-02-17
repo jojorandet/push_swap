@@ -23,7 +23,21 @@
 # define DEBUG_ENABLE 0
 # define DEBUG(...) if (DEBUG_ENABLE) printf(__VA_ARGS__);
 
+typedef struct  s
+{
+    int len;
+    int sub_len;
+    int rot_a_count;
+    int rot_b_count;
+    int pushed_count;
+    int is_left_touch;
+    int is_right_touch;
+    int pivot_one_third;
+    int pivot_two_thirds;
+}               t_s;
+
 typedef struct s_stack t_stack;
+
 //conversion to index 
 void	index_convert(t_stack *stack);
 

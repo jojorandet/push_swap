@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:56:27 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/12 22:50:43 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/17 19:24:34 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	rot_a(t_stack *stack)
+static void	apply_rot_a(t_stack *stack)
 {
 	int	temp;
 	int	*cursor_rot;
@@ -25,10 +25,9 @@ void	rot_a(t_stack *stack)
 		cursor_rot++;
 	}
 	*(stack->end) = temp;
-	ft_putstr("ra\n");
 }
 
-void	rot_b(t_stack *stack)
+static void	apply_rot_b(t_stack *stack)
 {
 	int	temp;
 	int	*cursor;
@@ -41,12 +40,23 @@ void	rot_b(t_stack *stack)
 		cursor--;
 	}
 	*cursor = temp;
+}
+
+void	rot_a(t_stack *stack)
+{
+	apply_rot_a(stack);
+	ft_putstr("ra\n");
+}
+
+void	rot_b(t_stack *stack)
+{
+	apply_rot_b(stack);
 	ft_putstr("rb\n");
 }
 
 void	rot_rr(t_stack *stack)
 {
-	rot_a(stack);
-	rot_b(stack);
+	apply_rot_a(stack);
+	apply_rot_b(stack);
 	ft_putstr("rr\n");
 }
