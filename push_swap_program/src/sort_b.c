@@ -5,86 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 19:57:05 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 18:53:01 by jrandet          ###   ########.fr       */
+/*   Created: 2025/02/18 19:26:15 by jrandet           #+#    #+#             */
+/*   Updated: 2025/02/18 19:36:54 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// /0 4 3 5 2 1 pivot = 5
-// /4 3 5 2 1 0 p = 0 o = 1
-// /3 5 2 1 0 4 p = 0 o = 2
-// /5 2 1 0 4 3 p = 0 o = 3
-// 5 / 2 1 0 4 3 p = 1 o = 4
-// 5 / 1 0 4 3 2 p = 1 o = 5
-// 5 / 0 4 3 2 1 p = 1 o = 6    len - pushed count 6 - 1 = 5  op = 6 
-
-// 5 / 1 0 4 3 2 rev rot a
-
-// 0 4 3 5 2 1 pivot = 3
-// 0 /4 3 5 2 1 p = 1 o = 1
-// 0/ 3 5 2 1 4 p = 1 o = 2
-// 0 /5 2 1 4 3 p = 1 o = 3
-// 0 /2 1 4 3 5 p = 1 o = 4
-// 0 2 /1 4 3 5 p = 2 o = 5
-// 0 2 1/ 4 3 5 p = 3 o = 6 
-
-//sort a
-// 0 2 1 /4 3 5 piv = 4
-// 0 2 1 / 3 5 4 p =n 0 o = 1
-// 0 2 1 3 / 5 4 len == 2
-
-//sort a 
-// 0 2 1 3/ 4 5 swap a
-
-static void main_sorting_b(t_stack *stack, int len, int sub_len)
+static void	restore_rotate(t_stack *stack, t_s *s)
 {
-	int	pivot_i;
-	int	pushed_count;
-	int	rot_count;
-	int	ops_done_count;
-
-	pivot_i = (stack->top_i) - sub_len;
-	DEBUG("top_i is worth %d\n", stack->top_i);
-	DEBUG("len is worth %d\n", len);
-	DEBUG("sub_len is worth %d\n", sub_len);
-	DEBUG("pivot_i is worth %d\n", pivot_i);
-	pushed_count = 0;
-	ops_done_count = 0;
-	rot_count = 0;
-	while ((pushed_count < sub_len) && (ops_done_count < len))
+	if (s->sub_len < (stack->top - 1) - stack->values)
 	{
-		if (*(stack->top - 1) < pivot_i)
-		{
-			rot_b(stack);
-			print_array(stack, "top - 1 < pivot i, rotb");
-			rot_count++;
-		}
-		else
-		{
-			push_a(stack);
-			print_array(stack, "top - 1 >= pivot, pushb");
-			pushed_count++;
-		}
-		ops_done_count++;
-		DEBUG("pushed = %d, op_d = %d\n\n", pushed_count, ops_done_count);
-	}
-	if (sub_len < ((stack->top - 1) - stack->values))
-	{
-		while (rot_count)
+		while (s->rot_count)
 		{
 			rev_rot_b(stack);
-			print_array(stack, "roll back rev rotate b");
-			rot_count--;
+			s->rot_count--;
 		}
-		print_array(stack, "stack after main_sorting_b");
 	}
+}
+
+static  void two_way_sorting(t_stack *stack, t_s *s)
+{
+    int ops_done;
+
+    ops_done = 0;
+    while (s->pushed_count < s->sub_len && ops_done < s->len)
+    {
+        if (*(stack->top - 1) < s->pivot_index)
+        {
+            rot_b(stack);
+            s->rot_count++;
+        }
+        else
+        {
+            push_a(stack);
+            s->pushed_count++;
+        }
+        ops_done++;
+    }
+    
+}
+
+static void sort_initialise(t_stack *stack, t_s *s, int len)
+{
+    s->len = len;
+    s->sub_len = len / 2;
+    s->rot_count = 0;
+	s->pushed_count = 0;
+    s->is_left_touch = (stack->top_i == 0);
+	s->is_right_touch = (stack->top_i + s->len == stack->len);
+	s->pivot_index = stack->top_i - s->sub_len;
 }
 
 void	sort_b(t_stack *stack, int len)
 {
-	int	sub_len;
+	t_s s;
 
 	DEBUG("SORT B\n\n");
 	if (len <= 1)
@@ -95,17 +70,14 @@ void	sort_b(t_stack *stack, int len)
 	if (len == 2)
 	{
 		if (*(stack->top - 2) > *(stack->top - 1))
-		{
 			swap_b(stack);
-			print_array(stack, "in sort_b, len == 2, swap b");
-		}
 		push_a(stack);
 		push_a(stack);
-		print_array(stack, "sort b len == 2 done");
 		return ;
 	}
-	sub_len = len / 2;
-	main_sorting_b(stack, len, sub_len);
-	sort_a(stack, sub_len);
-	sort_b(stack, len - sub_len);
+	sort_initialise(stack, &s, len);
+	two_way_sorting(stack, &s);
+	restore_rotate(stack, &s);
+	sort_a(stack, s.sub_len);
+	sort_b(stack, s.len - s.sub_len);
 }

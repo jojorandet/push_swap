@@ -28,11 +28,11 @@ typedef struct s_s
 {
     int len;
     int sub_len;
-    int rot_a_count;
-    int rot_b_count;
+    int rot_count;
     int pushed_count;
     int is_left_touch;
     int is_right_touch;
+    int pivot_index;
 }              t_s;
 
 typedef struct s_stack t_stack;
