@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:35:24 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/16 20:27:35 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 18:52:59 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void	main_sorting_a(t_stack *stack, int len, int sub_len)
 	}
 }
 
-void	sort_a(t_stack *stack, int len)
+void	sort_a_old(t_stack *stack, int len)
 {
 	int	sub_len;
 	
