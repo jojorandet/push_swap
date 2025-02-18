@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 16:04:52 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 19:53:22 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static void	fill_array(char **array_string, t_stack *stack)
 
 static void	init_values(t_stack *stack)
 {
-	stack->values = (int *)ft_calloc(stack->len, sizeof(int)); //i used to do a check if(!stack) but since stack is never malloced, it cannot be NULL.
+	stack->values = (int *)ft_calloc(stack->len, sizeof(int));
 	if (!(stack->values))
-		push_swap_exit(stack, "Memory error: Memory alloc failed for stack->values.\n");
+		push_swap_exit(stack, "Memory alloc failed for stack->values.\n");
 	stack->end = (stack->values + (stack->len - 1));
 }
 

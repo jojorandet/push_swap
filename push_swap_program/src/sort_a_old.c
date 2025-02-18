@@ -6,11 +6,11 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 18:35:24 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:33:35 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 19:50:02 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+/*#include "../include/push_swap.h"
 
 static void	main_sorting_a(t_stack *stack, int len, int sub_len)
 {
@@ -27,7 +27,7 @@ static void	main_sorting_a(t_stack *stack, int len, int sub_len)
 	pushed_count = 0;
 	ops_done_count = 0;
 	rot_count = 0;
-	while ((pushed_count < sub_len) && (ops_done_count < len)) //they both start at 0 this is why i have the strictly smaller
+	while ((pushed_count < sub_len) && (ops_done_count < len))
 	{
 		if (*(stack->top) < pivot_i)
 		{
@@ -79,4 +79,4 @@ void	sort_a_old(t_stack *stack, int len)
 	main_sorting_a(stack, len, sub_len);
 	sort_a(stack, len - sub_len);
 	sort_b(stack, sub_len);
-}
+}*/

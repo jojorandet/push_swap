@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_manipulation_operations.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 20:40:18 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/11 22:23:41 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 19:45:57 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

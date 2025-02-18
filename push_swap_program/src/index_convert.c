@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index_convert.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 16:15:28 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/12 11:09:43 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 19:45:58 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ static int	*value_creation(t_stack *stack)
 
 void	index_convert(t_stack *stack)
 {
-	int i;
+	int	i;
 	int	count_smaller;
 	int	*values;
-	
+
 	values = value_creation(stack);
 	i = 0;
 	while (i < stack->len)

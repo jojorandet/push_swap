@@ -1,8 +1,18 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/18 19:44:01 by jrandet           #+#    #+#             */
+/*   Updated: 2025/02/18 19:49:09 by jrandet          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	print_array(t_stack *stack, char *where_i_am)
+/*void	print_array(t_stack *stack, char *where_i_am)
 {
 	int	i;
 
@@ -22,18 +32,15 @@ void	print_array(t_stack *stack, char *where_i_am)
 		i++;
 	}
 	DEBUG("\n\n");
-}
+}*/
 
 int	main(int argc, char **argv)
 {
 	t_stack		stack;
 
 	parse_arguments(argc, argv, &stack);
-	print_array(&stack, "array before indexing");
 	index_convert(&stack);
-	print_array(&stack, "array after indexing");
 	sorting(&stack);
-	print_array(&stack, "sorted array");
 	push_swap_exit(&stack, NULL);
 	return (0);
 }

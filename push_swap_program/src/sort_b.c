@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:26:15 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:36:54 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 19:52:08 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,42 +24,41 @@ static void	restore_rotate(t_stack *stack, t_s *s)
 	}
 }
 
-static  void two_way_sorting(t_stack *stack, t_s *s)
+static void	two_way_sorting(t_stack *stack, t_s *s)
 {
-    int ops_done;
+	int	ops_done;
 
-    ops_done = 0;
-    while (s->pushed_count < s->sub_len && ops_done < s->len)
-    {
-        if (*(stack->top - 1) < s->pivot_index)
-        {
-            rot_b(stack);
-            s->rot_count++;
-        }
-        else
-        {
-            push_a(stack);
-            s->pushed_count++;
-        }
-        ops_done++;
-    }
-    
+	ops_done = 0;
+	while (s->pushed_count < s->sub_len && ops_done < s->len)
+	{
+		if (*(stack->top - 1) < s->pivot_index)
+		{
+			rot_b(stack);
+			s->rot_count++;
+		}
+		else
+		{
+			push_a(stack);
+			s->pushed_count++;
+		}
+		ops_done++;
+	}
 }
 
-static void sort_initialise(t_stack *stack, t_s *s, int len)
+static void	sort_initialise(t_stack *stack, t_s *s, int len)
 {
-    s->len = len;
-    s->sub_len = len / 2;
-    s->rot_count = 0;
+	s->len = len;
+	s->sub_len = len / 2;
+	s->rot_count = 0;
 	s->pushed_count = 0;
-    s->is_left_touch = (stack->top_i == 0);
+	s->is_left_touch = (stack->top_i == 0);
 	s->is_right_touch = (stack->top_i + s->len == stack->len);
 	s->pivot_index = stack->top_i - s->sub_len;
 }
 
 void	sort_b(t_stack *stack, int len)
 {
-	t_s s;
+	t_s	s;
 
 	DEBUG("SORT B\n\n");
 	if (len <= 1)

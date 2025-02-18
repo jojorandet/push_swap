@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   atoll_long_push_swap.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:59:06 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/12 10:27:53 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 19:55:12 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	sign_treatment(t_stack *stack, int *countsign, long long *result)
 		push_swap_exit(stack, "Input error: Value bigger than INT_MAX!\n");
 }
 
-static void	pre_number_parse(t_stack *stack, const char **str, int *countsign) // need the double pointer for it to work 
+static void	pre_numb_parse(t_stack *stack, const char **str, int *countsign)
 {
 	while (**str && ((9 <= **str && **str <= 13) || **str == ' '))
 		str++;
@@ -36,7 +36,6 @@ static void	pre_number_parse(t_stack *stack, const char **str, int *countsign) /
 		if (**str == '-' || **str == '+')
 			push_swap_exit(stack, "Input error: multiple signs in input.\n");
 	}
-	
 }
 
 int	atoll_push_swap(t_stack *stack, const char *str)
@@ -46,7 +45,7 @@ int	atoll_push_swap(t_stack *stack, const char *str)
 
 	countsign = 1;
 	result = 0;
-	pre_number_parse(stack, &str, &countsign);
+	pre_numb_parse(stack, &str, &countsign);
 	while ('0' <= *str && *str <= '9')
 	{
 		result = (result * 10) + (*str - 48);

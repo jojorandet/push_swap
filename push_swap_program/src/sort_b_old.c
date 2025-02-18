@@ -6,11 +6,11 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 19:57:05 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:33:44 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 19:49:41 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+/*#include "../include/push_swap.h"
 
 // /0 4 3 5 2 1 pivot = 5
 // /4 3 5 2 1 0 p = 0 o = 1
@@ -108,4 +108,4 @@ void	sort_b_old(t_stack *stack, int len)
 	main_sorting_b(stack, len, sub_len);
 	sort_a(stack, sub_len);
 	sort_b(stack, len - sub_len);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 18:45:53 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:24:19 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 19:48:20 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	restore_rotate(t_stack *stack, t_s *s)
 
 static void	two_way_sort(t_stack *stack, t_s *s)
 {
-	int ops_done;
+	int	ops_done;
 
 	ops_done = 0;
 	while (s->pushed_count < s->sub_len && ops_done < s->len)
@@ -45,24 +45,24 @@ static void	two_way_sort(t_stack *stack, t_s *s)
 	}
 }
 
-static void sort_initialise(t_stack *stack, t_s *s, int len)
+static void	sort_initialise(t_stack *stack, t_s *s, int len)
 {
-    s->len = len;
-    s->sub_len = len / 2;
-    s->rot_count = 0;
+	s->len = len;
+	s->sub_len = len / 2;
+	s->rot_count = 0;
 	s->pushed_count = 0;
-    s->is_left_touch = (stack->top_i == 0);
+	s->is_left_touch = (stack->top_i == 0);
 	s->is_right_touch = (stack->top_i + s->len == stack->len);
 	s->pivot_index = stack->top_i + s->sub_len;
 }
 
 void	sort_a(t_stack *stack, int len)
 {
-    t_s         s;
-	
+	t_s	s;
+
 	DEBUG("SORT A\n\n");
 	if (len <= 1)
-		return;
+		return ;
 	if (len == 2)
 	{
 		if (*(stack->top) > *(stack->top + 1))
@@ -73,9 +73,9 @@ void	sort_a(t_stack *stack, int len)
 		print_array(stack, "sort a len == 2 done");
 		return ;
 	}
-    sort_initialise(stack, &s, len);
+	sort_initialise(stack, &s, len);
 	two_way_sort(stack, &s);
-    restore_rotate(stack, &s);
+	restore_rotate(stack, &s);
 	sort_a(stack, (s.len - s.sub_len));
 	sort_b(stack, s.sub_len);
 }
