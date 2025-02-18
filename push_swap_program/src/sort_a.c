@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_a_sorted.c                                    :+:      :+:    :+:   */
+/*   sort_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 18:14:30 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/17 19:38:02 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 09:53:21 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ static void	sort_initialise(t_stack *stack, t_s *s, int len)
 
 void    sort_a(t_stack *stack, int len)
 {
-	t_s    s;
+	t_s	s;
+	int a, b, c;
 
 	if (len <= 1)
 		return ;
@@ -96,6 +97,10 @@ void    sort_a(t_stack *stack, int len)
 	sort_initialise(stack, &s, len);
 	three_way_sort(stack, &s);
 	restore_rotate(stack, &s);
-	sort_a(stack, (s.len - s.sub_len));
-	sort_b(stack, s.sub_len);
+	c = s.len - s.sub_len;
+	b = s.sub_len / 2;
+	a = s.len - c - b;
+	sort_a(stack, c);
+	sort_b(stack, b);
+	sort_b(stack, a);
 }

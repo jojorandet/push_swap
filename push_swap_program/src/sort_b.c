@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 19:40:08 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/17 20:20:12 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/17 23:43:07 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ static void	restore_rotate(t_stack *stack, t_s *s)
 			s->rot_b_count--;
 		}
 	}
+	while (s->pushed_count < s->len)
+	{
+		push_a(stack);
+		s->pushed_count++;
+	}
 }
 
 static void three_way_sort(t_stack *stack, t_s *s)
@@ -48,19 +53,19 @@ static void three_way_sort(t_stack *stack, t_s *s)
 		if (*(stack->top - 1) >= s->pivot_one_third)
 		{
 			push_a(stack);
+			s->pushed_count++;
 			if (*(stack->top) < s->pivot_two_thirds)
 			{
 				rot_a(stack);
 				s->rot_a_count++;
 			}
-			s->pushed_count++;
 		}
 		else
 		{
 			rot_b(stack);
 			s->rot_b_count++;
 		}
-   }
+	}
 }
 
 static void	sort_initialise(t_stack *stack, t_s *s, int len)
@@ -72,6 +77,7 @@ static void	sort_initialise(t_stack *stack, t_s *s, int len)
 	s->pushed_count = 0;
 	s->is_left_touch = (stack->top_i == 0);
 	s->is_right_touch = ((stack->top_i + s->len) == stack->len);
+	
 	s->pivot_one_third = stack->top_i - s->sub_len;
 	s->pivot_two_thirds = stack->top_i - (s->sub_len / 2);
 }
@@ -97,5 +103,4 @@ void    sort_b(t_stack *stack, int len)
 	three_way_sort(stack, &s);
 	restore_rotate(stack, &s);
 	sort_a(stack, (s.sub_len));
-	sort_b(stack, (s.len - s.sub_len));
 }
