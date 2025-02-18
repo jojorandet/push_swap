@@ -6,33 +6,11 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:44:01 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:49:09 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 20:19:20 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-/*void	print_array(t_stack *stack, char *where_i_am)
-{
-	int	i;
-
-	i = 0;
-	DEBUG("%s\n", where_i_am);
-	while (i < stack->len)
-	{
-		if (&stack->values[i] == stack->top)
-		{
-			DEBUG("|")
-		}
-		else
-		{
-			DEBUG(" ")
-		}
-		DEBUG(" %d ", stack->values[i])
-		i++;
-	}
-	DEBUG("\n\n");
-}*/
 
 int	main(int argc, char **argv)
 {

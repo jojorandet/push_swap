@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:26:15 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:52:08 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 20:16:59 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	sort_b(t_stack *stack, int len)
 {
 	t_s	s;
 
-	DEBUG("SORT B\n\n");
 	if (len <= 1)
 	{
 		push_a(stack);

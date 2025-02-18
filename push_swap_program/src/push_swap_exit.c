@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_exit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrandet <jrandet@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 18:17:30 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/13 21:00:44 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 20:17:18 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	push_swap_exit(t_stack *stack, char *error)
 {
-	DEBUG("EXIT :)")
 	free_stack(stack);
 	if (error)
 	{

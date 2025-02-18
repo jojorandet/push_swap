@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 18:45:53 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:48:20 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 20:19:19 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,12 @@ void	sort_a(t_stack *stack, int len)
 {
 	t_s	s;
 
-	DEBUG("SORT A\n\n");
 	if (len <= 1)
 		return ;
 	if (len == 2)
 	{
 		if (*(stack->top) > *(stack->top + 1))
-		{
 			swap_a(stack);
-			print_array(stack, "sort a len == 2, swap a");
-		}
-		print_array(stack, "sort a len == 2 done");
 		return ;
 	}
 	sort_initialise(stack, &s, len);

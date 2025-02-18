@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 15:06:46 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:47:12 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/18 20:19:05 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	sort_five_elements(t_stack *stack)
 	push_a(stack);
 	if (stack->len_b)
 		push_a(stack);
-	print_array(stack, "in sort_five_elements - sort_small_n.c\n");
 	push_swap_exit(stack, NULL);
 }
 
