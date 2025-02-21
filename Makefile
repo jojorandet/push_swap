@@ -23,7 +23,7 @@ CFLAGS = -Wall -Werror -Wextra -g
 STACK_SRCS		= 	atoll_long_push_swap.c \
 					int_tester.c \
 					parsing.c \
-					stack_utils.c
+					stack_free.c
 
 PROGRAM_SRCS	=	push_swap.c \
 					index_convert.c \

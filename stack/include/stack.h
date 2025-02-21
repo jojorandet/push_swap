@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:27:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:56:26 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/19 11:54:49 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int		is_int(char *s);
 void	check_array_len(t_stack *stack, char **array_of_strings);
 int		atoll_push_swap(t_stack *stack, const char *str);
 void	check_doubles(t_stack *stack);
+int		check_if_sorted(t_stack *stack);
+void	free_list(char **list);
 
 #endif

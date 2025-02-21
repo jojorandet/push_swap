@@ -6,11 +6,28 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:54:49 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/21 11:37:08 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/stack.h"
+
+int	check_if_sorted(t_stack *stack)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = i + 1;
+	while (i < (stack->len - 1))
+	{
+		if (stack->values[i] > stack->values[j])
+			return (1);
+		i++;
+		j++;
+	}
+	return (0);
+}
 
 void	check_doubles(t_stack *stack)
 {
@@ -24,7 +41,7 @@ void	check_doubles(t_stack *stack)
 		while (j < stack->len)
 		{
 			if (stack->values[i] == stack->values[j])
-				push_swap_exit(stack, "a double is found in input.\n");
+				push_swap_exit(stack, "Error!\n");
 			j++;
 		}
 		i++;
@@ -42,7 +59,7 @@ void	check_array_len(t_stack *stack, char **array_of_strings)
 		if (array_of_strings[i][0] == '-')
 		{
 			if (ft_strlen(array_of_strings[i]) > 11)
-				push_swap_exit(stack, "Input error: input too long!\n");
+				push_swap_exit(stack, "Error!\n");
 		}
 		else
 		{
