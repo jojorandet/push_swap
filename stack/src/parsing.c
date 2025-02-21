@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/19 11:59:21 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/21 15:01:07 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ static void	fill_array(char **array_string, t_stack *stack)
 		*(value++) = atoll_push_swap(stack, *(array_string++));
 	check_doubles(stack);
 	if (!check_if_sorted(stack))
-		push_swap_exit(stack, NULL);
+	{
+		stack->error = 1;
+		return ;
+	}
 	stack->top = (stack->values);
 }
 
@@ -30,7 +33,10 @@ static void	init_values(t_stack *stack)
 {
 	stack->values = (int *)ft_calloc(stack->len, sizeof(int));
 	if (!(stack->values))
-		push_swap_exit(stack, "Memory alloc failed for stack->values.\n");
+	{
+		stack->error = 1;
+		return ;
+	}
 	stack->end = (stack->values + (stack->len - 1));
 }
 
@@ -42,7 +48,10 @@ static void	parse_multiple_arg(int argc, char **argv, t_stack *stack)
 	while (i < argc)
 	{
 		if (!is_int(argv[i]))
-			push_swap_exit(stack, "Input Error: argument is not int.\n");
+		{		
+			stack->error = 1;
+			return ;
+		}
 		i++;
 	}
 	stack->len = (argc - 1);
@@ -58,11 +67,17 @@ static void	parse_single_string(char *str, t_stack *stack)
 
 	array_string = ft_split(str, ' ');
 	if (!array_string || !*array_string)
-		push_swap_exit(stack, "Parsing Error: ft_split has failed\n");
+	{
+		stack->error = 1;
+		return ;
+	}
 	while (array_string[stack->len] != NULL)
 	{
 		if (!is_int(array_string[stack->len]))
-			push_swap_exit(stack, "Input Error: argument is not int.\n");
+		{
+			stack->error = 1;
+			return ;
+		}
 		stack->len++;
 	}
 	stack->len_a = stack->len;
@@ -80,4 +95,6 @@ void	parse_arguments(int argc, char **argv, t_stack *stack)
 		parse_single_string(argv[1], stack);
 	else
 		parse_multiple_arg(argc, argv, stack);
+	if (stack->error)
+		push_swap_exit(stack, "Error!\n");
 }

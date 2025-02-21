@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:27:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/19 11:54:49 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/21 14:48:02 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack
 	int	len;
 	int	len_a;
 	int	len_b;
+	int	error;
 }				t_stack;
 
 void	free_stack(t_stack *stack);
