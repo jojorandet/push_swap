@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:41:29 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 20:11:07 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/21 15:38:33 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,9 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <limits.h>
 # include "../../libft/libft.h"
 # include "../../stack/include/stack.h"
-
-//# define DEBUG_ENABLE 0
-//# define DEBUG(...) if (DEBUG_ENABLE) printf(__VA_ARGS__);
 
 typedef struct s_s
 {

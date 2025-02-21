@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 11:59:06 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/18 19:55:12 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/21 15:38:01 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,16 @@ static void	sign_treatment(t_stack *stack, int *countsign, long long *result)
 	{
 		*result = ((*result) * (*countsign));
 		if (*result < INT_MIN)
-			push_swap_exit(stack, "Input error: Value smaller than INT_MIN!\n");
+		{
+			stack->error = 1;
+			return ;
+		}
 	}
 	if (*result > INT_MAX)
-		push_swap_exit(stack, "Input error: Value bigger than INT_MAX!\n");
+	{
+		stack->error = 1;
+		return ;
+	}
 }
 
 static void	pre_numb_parse(t_stack *stack, const char **str, int *countsign)

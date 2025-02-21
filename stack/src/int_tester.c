@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 18:37:21 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/21 11:37:08 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/21 15:14:20 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ void	check_doubles(t_stack *stack)
 		while (j < stack->len)
 		{
 			if (stack->values[i] == stack->values[j])
-				push_swap_exit(stack, "Error!\n");
+			{
+				stack->error = 1;
+				return ;
+			}
 			j++;
 		}
 		i++;
@@ -59,12 +62,18 @@ void	check_array_len(t_stack *stack, char **array_of_strings)
 		if (array_of_strings[i][0] == '-')
 		{
 			if (ft_strlen(array_of_strings[i]) > 11)
-				push_swap_exit(stack, "Error!\n");
+			{
+				stack->error = 1;
+				return ;
+			}
 		}
 		else
 		{
 			if (ft_strlen(array_of_strings[i]) > 10)
-				push_swap_exit(stack, "Input error: input too long\n");
+			{
+				stack->error = 1;
+				return ;
+			}
 		}
 		i++;
 	}

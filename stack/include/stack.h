@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 10:27:34 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/21 14:48:02 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/21 15:38:22 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include <stdio.h>
 # include "../../libft/libft.h"
 # include "../../push_swap_program/include/push_swap.h"
 

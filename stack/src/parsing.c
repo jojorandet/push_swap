@@ -6,7 +6,7 @@
 /*   By: jrandet <jrandet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:06:04 by jrandet           #+#    #+#             */
-/*   Updated: 2025/02/21 15:01:07 by jrandet          ###   ########.fr       */
+/*   Updated: 2025/02/21 15:35:35 by jrandet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ static void	fill_array(char **array_string, t_stack *stack)
 	while (value <= stack->end)
 		*(value++) = atoll_push_swap(stack, *(array_string++));
 	check_doubles(stack);
-	if (!check_if_sorted(stack))
+	if (!check_if_sorted(stack) && !stack->error)
 	{
-		stack->error = 1;
+		// push_swap_exit(stack, NULL);
+		stack->error = 2 ;
 		return ;
 	}
 	stack->top = (stack->values);
@@ -95,6 +96,8 @@ void	parse_arguments(int argc, char **argv, t_stack *stack)
 		parse_single_string(argv[1], stack);
 	else
 		parse_multiple_arg(argc, argv, stack);
-	if (stack->error)
+	if (stack->error == 1)
 		push_swap_exit(stack, "Error!\n");
+	if (stack->error == 2)
+		push_swap_exit(stack, NULL);
 }
